@@ -9,7 +9,7 @@
  * VEM SOM FÅR: prenumerationerna i databasen (notiser/{id}) bär grupp och lag.
  * Bara de grupper någon prenumererar på kontrolleras.
  *
- * VAD SOM ÄR FLYTTAT: en ospelad, kommande match (samma matchnummer) som fått
+ * VAD SOM ÄR FLYTTAT: en ospelad, kommande match (samma matchnummer och lag) som fått
  * annat datum, annan tid eller annan ishall sedan förra kontrollen. Förra
  * kontrollens schema ligger i senast/<grupp>.json och committas av GitHub.
  * Första gången en grupp kontrolleras sparas bara schemat — ingen notis.
@@ -95,14 +95,15 @@ for (const grupp of grupper) {
   // annars skulle nästa lyckade hämtning se alla matcher som nya.
   if (matcher.length === 0) { console.warn(`grupp ${grupp}: inga matcher lästa — sparar inget`); continue; }
 
+  // Nyckeln är matchnummer + lag: i sammandrag (U11P) delar alla matcher numret "Pool:1,Game:1".
   const nu = Object.fromEntries(matcher.filter(m => m.nr)
-    .map(m => [m.nr, { datum: m.datum, tid: m.tid, arena: m.arena, hemma: m.hemma, borta: m.borta, resultat: m.resultat }]));
+    .map(m => [`${m.nr}|${m.hemma}|${m.borta}`, { datum: m.datum, tid: m.tid, arena: m.arena, hemma: m.hemma, borta: m.borta, resultat: m.resultat }]));
   const fil = resolve(SENAST, `${grupp}.json`);
   const forut = existsSync(fil) ? JSON.parse(readFileSync(fil, 'utf8')).matcher : null;
 
   const flyttade = [];
-  for (const [nr, fore] of Object.entries(forut ?? {})) {
-    const efter = nu[nr];
+  for (const [nyckel, fore] of Object.entries(forut ?? {})) {
+    const efter = nu[nyckel];
     if (!efter || fore.resultat || efter.resultat) continue;
     if (fore.datum < idag && efter.datum < idag) continue;
     if (fore.datum === efter.datum && fore.tid === efter.tid && fore.arena === efter.arena) continue;
