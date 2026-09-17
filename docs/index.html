@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b2545">
+<title>Matcher i tidsordning</title>
+<style>
+  :root {
+    --bg: #f4f6f9; --kort: #fff; --text: #14213d; --svag: #6b7280; --linje: #e3e7ee;
+    --accent: #0b5cad; --eget: #fff4d6; --egetkant: #f0b400; --idag: #d7263d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f141b; --kort: #19212c; --text: #e7ecf3; --svag: #95a0b0; --linje: #2a3441;
+      --accent: #6cb4ff; --eget: #3a2f10; --egetkant: #d9a200; --idag: #ff6b7d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  header { background: #0b2545; color: #fff; padding: calc(12px + env(safe-area-inset-top)) 16px 12px; }
+  header h1 { margin: 0; font-size: 20px; }
+  header p { margin: 2px 0 0; font-size: 13px; opacity: .8; }
+  .val { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 16px;
+    background: var(--kort); border-bottom: 1px solid var(--linje); position: sticky; top: 0; z-index: 2; }
+  .val label { font-size: 12px; color: var(--svag); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .val select { font-size: 16px; padding: 6px; border-radius: 8px; border: 1px solid var(--linje);
+    background: var(--bg); color: var(--text); width: 100%; }
+  .val .rad { grid-column: 1 / -1; display: flex; gap: 16px; align-items: center; font-size: 14px; color: var(--text); flex-direction: row; }
+  main { padding: 8px 16px 40px; max-width: 720px; margin: 0 auto; }
+  .status { color: var(--svag); padding: 24px 0; text-align: center; }
+  h2.dag { font-size: 14px; color: var(--svag); margin: 18px 0 6px; }
+  h2.dag.idag { color: var(--idag); }
+  .match { background: var(--kort); border: 1px solid var(--linje); border-radius: 10px; padding: 10px 12px;
+    margin-bottom: 6px; display: grid; grid-template-columns: 52px 1fr auto; gap: 2px 10px; align-items: baseline; }
+  .match.eget { background: var(--eget); border-color: var(--egetkant); }
+  .match.spelad { opacity: .6; }
+  .tid { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .lag { font-weight: 600; }
+  .lag b { font-weight: 800; }
+  .res { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  .info { grid-column: 2 / -1; font-size: 13px; color: var(--svag); }
+  .nr { grid-column: 1; font-size: 11px; color: var(--svag); }
+  .flyttad { color: var(--idag); font-weight: 600; }
+  a { color: var(--accent); }
+  footer { font-size: 12px; color: var(--svag); text-align: center; padding: 0 16px 30px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Matcher i tidsordning</h1>
+  <p id="undertext">Hämtas direkt från stats.swehockey.se</p>
+</header>
+
+<div class="val">
+  <label>Distrikt <select id="distrikt"></select></label>
+  <label>Förening <select id="forening"></select></label>
+  <label>Årskull / serie <select id="serie"></select></label>
+  <label>Grupp <select id="grupp"></select></label>
+  <label style="grid-column: 1 / -1">Lag <select id="lag"></select></label>
+  <label class="rad"><input type="checkbox" id="visaSpelade"> Visa spelade matcher</label>
+</div>
+
+<main id="lista"><p class="status">Hämtar…</p></main>
+<footer id="fot"></footer>
+
+<script>
+const BAS = 'https://stats.swehockey.se';
+const $ = id => document.getElementById(id);
+const sparat = (() => { try { return JSON.parse(localStorage.getItem('val') || '{}'); } catch { return {}; } })();
+const spara = () => { try { localStorage.setItem('val', JSON.stringify(sparat)); } catch {} };
+
+// Förval: Sudrets HC, U14P Röd grupp 5
+const FORVAL = { distrikt: '/District/Gotland', forening: 'Sudrets HC', serie: 'U14P', grupp: '21486', lag: 'Sudrets HC' };
+const val = k => sparat[k] ?? FORVAL[k];
+
+const cache = new Map();
+async function hamta(sokvag) {
+  if (cache.has(sokvag)) return cache.get(sokvag);
+  const p = fetch(BAS + sokvag).then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(t => new DOMParser().parseFromString(t, 'text/html'));
+  cache.set(sokvag, p);
+  p.catch(() => cache.delete(sokvag));
+  return p;
+}
+const ren = s => (s || '').replace(/\s+/g, ' ').trim();
+
+// Swehockeys rullgardiner har en rubrik (h5 eller label) strax före sig: "Clubs in …", "Tournament", "Group"
+function rullgardin(doc, rubrik) {
+  for (const h of doc.querySelectorAll('h5, label')) {
+    if (!ren(h.textContent).startsWith(rubrik)) continue;
+    const sel = h.parentElement.querySelector('select');
+    if (!sel) continue;
+    return [...sel.querySelectorAll('option')]
+      .filter(o => !o.disabled && o.value && o.value !== '0' && !o.value.endsWith('/District'))
+      .filter(o => o.getAttribute('id') !== 'chooseany')
+      .map(o => ({ namn: ren(o.textContent), sokvag: o.value }));
+  }
+  return [];
+}
+const idUr = sokvag => (sokvag.match(/\/(\d+)(?:\?|$)/) || [])[1];
+
+function fyll(sel, poster, valt, text = p => p.namn, varde = p => p.namn) {
+  sel.innerHTML = '';
+  for (const p of poster) sel.add(new Option(text(p), varde(p)));
+  const finns = poster.some(p => varde(p) === valt);
+  if (finns) sel.value = valt;
+  return poster.find(p => varde(p) === sel.value);
+}
+
+async function laddaDistrikt() {
+  const doc = await hamta('/District/Gotland');
+  const set = new Map();
+  for (const a of doc.querySelectorAll('a[href^="/District/"]')) {
+    const m = a.getAttribute('href').match(/^\/District\/[A-Za-z]+$/);
+    if (m && !set.has(m[0])) set.set(m[0], ren(a.textContent));
+  }
+  const poster = [...set].map(([sokvag, namn]) => ({ sokvag, namn })).sort((a, b) => a.namn.localeCompare(b.namn, 'sv'));
+  fyll($('distrikt'), poster, val('distrikt'), p => p.namn, p => p.sokvag);
+  await laddaForeningar();
+}
+
+async function laddaForeningar() {
+  const doc = await hamta($('distrikt').value);
+  const poster = rullgardin(doc, 'Clubs in');
+  fyll($('forening'), poster, val('forening'));
+  await laddaSerier();
+}
+
+async function laddaSerier() {
+  const f = [...$('forening').options].length ? rullgardin(await hamta($('distrikt').value), 'Clubs in')
+    .find(p => p.namn === $('forening').value) : null;
+  if (!f) return tomt('Ingen förening hittades.');
+  const doc = await hamta(f.sokvag);
+  const poster = rullgardin(doc, 'Tournament');
+  fyll($('serie'), poster, val('serie'));
+  await laddaGrupper();
+}
+
+async function laddaGrupper() {
+  const f = rullgardin(await hamta($('distrikt').value), 'Clubs in').find(p => p.namn === $('forening').value);
+  const s = rullgardin(await hamta(f.sokvag), 'Tournament').find(p => p.namn === $('serie').value);
+  if (!s) return tomt('Föreningen har inga serier.');
+  const doc = await hamta(s.sokvag);
+  const poster = rullgardin(doc, 'Group').map(p => ({ ...p, id: idUr(p.sokvag) }));
+  fyll($('grupp'), poster, val('grupp'), p => p.namn, p => p.id);
+  await laddaMatcher();
+}
+
+let matcher = [];
+async function laddaMatcher() {
+  const id = $('grupp').value;
+  if (!id) return tomt('Ingen grupp vald.');
+  $('lista').innerHTML = '<p class="status">Hämtar matcher…</p>';
+  const f = $('distrikt').value;
+  const foreningSokvag = rullgardin(await hamta(f), 'Clubs in').find(p => p.namn === $('forening').value).sokvag;
+  const doc = await hamta(foreningSokvag.replace(/\/ScheduleAndResults\/\w+\/\d+.*/, '/ScheduleAndResults/Schedule/' + id));
+  matcher = lasSchema(doc);
+  const lag = [...new Set(matcher.flatMap(m => [m.hemma, m.borta]))].sort((a, b) => a.localeCompare(b, 'sv'));
+  const valtLag = val('lag');
+  fyll($('lag'), [{ namn: 'Alla lag' }, ...lag.map(namn => ({ namn }))],
+    lag.includes(valtLag) ? valtLag : (lag.find(l => l.startsWith($('forening').value)) || 'Alla lag'));
+  const uppd = ren(doc.querySelector('.tdTitleRight')?.textContent);
+  $('fot').textContent = (uppd ? uppd.replace('Last update', 'Senast uppdaterad hos Swehockey') + ' · ' : '') + 'Källa: stats.swehockey.se';
+  visa();
+}
+
+function lasSchema(doc) {
+  const rader = [];
+  let datum = null;
+  for (const tr of doc.querySelectorAll('table.tblContent tr, table tr')) {
+    if (!tr.querySelector('.lnkTooltip')) continue;
+    if (rader.some(r => r.tr === tr)) continue;
+    const celler = [...tr.children].map(td => ren(td.textContent));
+    const d = celler.join(' ').match(/\d{4}-\d{2}-\d{2}/);
+    if (d) datum = d[0];
+    const tip = tr.querySelector('.lnkTooltip');
+    const tipText = ren(tip.textContent);
+    const tid = /^\d{1,2}:\d{2}$/.test(tipText) ? tipText
+      : (celler.find(c => /^\d{1,2}:\d{2}$/.test(c)) || (celler.join(' ').match(/\b\d{1,2}:\d{2}\b/) || [])[0] || '');
+    const nrText = ren(tip.getAttribute('title'));
+    const lagCell = /^\d{1,2}:\d{2}$/.test(tipText)
+      ? celler.find(c => / - /.test(c) && !/^\d+ - \d+$/.test(c) && !/^\(/.test(c))
+      : tipText;
+    if (!lagCell) continue;
+    const [hemma, borta] = lagCell.split(' - ').map(ren);
+    const resultat = celler.find(c => /^\d+ - \d+$/.test(c)) || '';
+    const perioder = celler.find(c => /^\(.*\)$/.test(c)) || '';
+    const arena = celler[celler.length - 1];
+    const lank = tr.querySelector('a[href*="openonlinewindow"]')?.getAttribute('href').match(/'([^']+)'/)?.[1];
+    rader.push({ tr, datum, tid: tid === '00:00' ? '' : tid, nr: nrText, hemma, borta, resultat, perioder, arena, lank });
+  }
+  return rader.map(({ tr, ...r }, i) => ({ ...r, ordning: i }));
+}
+
+function visa() {
+  const lag = $('lag').value;
+  const visaSpelade = $('visaSpelade').checked;
+  const idag = new Date().toLocaleDateString('sv-SE');
+  const urval = matcher
+    .filter(m => lag === 'Alla lag' || m.hemma === lag || m.borta === lag)
+    .filter(m => visaSpelade || !m.resultat && m.datum >= idag)
+    .sort((a, b) => (a.datum + (a.tid || '99:99')).localeCompare(b.datum + (b.tid || '99:99')) || a.ordning - b.ordning);
+
+  const antalSpelade = matcher.filter(m => (lag === 'Alla lag' || m.hemma === lag || m.borta === lag) && (m.resultat || m.datum < idag)).length;
+  $('undertext').textContent = `${$('serie').value} · ${$('grupp').selectedOptions[0]?.text || ''}`;
+
+  if (!urval.length) {
+    return tomt(antalSpelade && !visaSpelade ? `Inga kommande matcher. ${antalSpelade} spelade – bocka i "Visa spelade matcher".` : 'Inga matcher.');
+  }
+  // Matchnummer i Swehockeys ordning, för att kunna se vilka som flyttats
+  const nrOrdning = [...matcher].filter(m => /^\d+$/.test(m.nr)).sort((a, b) => a.nr - b.nr);
+  const html = [];
+  let dag = null;
+  for (const m of urval) {
+    if (m.datum !== dag) {
+      dag = m.datum;
+      const d = new Date(dag + 'T12:00');
+      let rubrik = d.toLocaleDateString('sv-SE', { weekday: 'long', day: 'numeric', month: 'long' });
+      rubrik = rubrik[0].toUpperCase() + rubrik.slice(1);
+      html.push(`<h2 class="dag${dag === idag ? ' idag' : ''}">${dag === idag ? 'Idag – ' : ''}${rubrik}</h2>`);
+    }
+    const eget = lag !== 'Alla lag';
+    const fet = n => n === lag ? `<b>${esc(n)}</b>` : esc(n);
+    const res = m.resultat ? (m.lank ? `<a href="${BAS}${m.lank}" target="_blank" rel="noopener">${esc(m.resultat)}</a>` : esc(m.resultat)) : '';
+    html.push(`<div class="match${m.resultat ? ' spelad' : ''}">
+      <span class="tid">${esc(m.tid) || '–'}</span>
+      <span class="lag">${fet(m.hemma)} – ${fet(m.borta)}</span>
+      <span class="res">${res}</span>
+      <span class="nr">${m.nr ? 'nr ' + esc(m.nr.replace(/^.*Game:/, '')) : ''}</span>
+      <span class="info">${esc(m.arena)}${m.perioder ? ' · ' + esc(m.perioder) : ''}</span>
+    </div>`);
+  }
+  $('lista').innerHTML = html.join('');
+  document.querySelector('h2.dag.idag')?.scrollIntoView({ block: 'start' });
+}
+
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+function tomt(text) { $('lista').innerHTML = `<p class="status">${esc(text)}</p>`; }
+const fel = e => tomt('Kunde inte hämta från Swehockey (' + e.message + '). Försök igen om en stund.');
+
+const kedja = { distrikt: laddaForeningar, forening: laddaSerier, serie: laddaGrupper, grupp: laddaMatcher };
+const nedstroms = ['distrikt', 'forening', 'serie', 'grupp', 'lag'];
+for (const k of nedstroms) {
+  $(k).addEventListener('change', () => {
+    sparat[k] = $(k).value;
+    // Ett nytt val högre upp gör valen under ogiltiga
+    for (const u of nedstroms.slice(nedstroms.indexOf(k) + 1)) delete sparat[u];
+    spara();
+    (kedja[k] ? kedja[k]() : Promise.resolve(visa())).catch(fel);
+  });
+}
+$('visaSpelade').checked = !!sparat.visaSpelade;
+$('visaSpelade').addEventListener('change', () => { sparat.visaSpelade = $('visaSpelade').checked; spara(); visa(); });
+
+laddaDistrikt().catch(fel);
+</script>
+</body>
+</html>

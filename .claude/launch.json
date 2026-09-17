@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "swehockey",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "5190", "--directory", "docs"],
+      "port": 5190
+    }
+  ]
+}
