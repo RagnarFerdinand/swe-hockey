@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b2545">
+<meta name="format-detection" content="telephone=no">
 <title>Matcher i tidsordning</title>
 <style>
   :root {
@@ -39,7 +40,6 @@
   .lag b { font-weight: 800; }
   .res { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
   .info { grid-column: 2 / -1; font-size: 13px; color: var(--svag); }
-  .nr { grid-column: 1; font-size: 11px; color: var(--svag); }
   .flyttad { color: var(--idag); font-weight: 600; }
   a { color: var(--accent); }
   footer { font-size: 12px; color: var(--svag); text-align: center; padding: 0 16px 30px; }
@@ -226,8 +226,7 @@ function visa() {
       <span class="tid">${esc(m.tid) || '–'}</span>
       <span class="lag">${fet(m.hemma)} – ${fet(m.borta)}</span>
       <span class="res">${res}</span>
-      <span class="nr">${m.nr ? 'nr ' + esc(m.nr.replace(/^.*Game:/, '')) : ''}</span>
-      <span class="info">${esc(m.arena)}${m.perioder ? ' · ' + esc(m.perioder) : ''}</span>
+      <span class="info">${esc(m.arena)}${m.perioder ? ' · ' + esc(m.perioder) : ''}${m.nr ? ' · nr ' + esc(m.nr.replace(/^.*Game:/, '')) : ''}</span>
     </div>`);
   }
   $('lista').innerHTML = html.join('');
