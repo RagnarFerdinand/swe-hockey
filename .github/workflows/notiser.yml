@@ -1,0 +1,46 @@
+# Varje timme: har någon match flyttats? Skicka då notis till dem som vill veta.
+# Skriptet: notiser/kontrollera.mjs. Nycklarna ligger som hemligheter i repots inställningar.
+name: Notiser om flyttade matcher
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: notiser
+  cancel-in-progress: false
+
+jobs:
+  kontrollera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+        working-directory: notiser
+      - name: Kontrollera och skicka
+        working-directory: notiser
+        env:
+          VAPID_JSON: ${{ secrets.VAPID_JSON }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          umask 077
+          printf '%s' "$VAPID_JSON" > "$RUNNER_TEMP/vapid.json"
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/konto.json"
+          VAPID_FIL="$RUNNER_TEMP/vapid.json" KONTO_FIL="$RUNNER_TEMP/konto.json" node kontrollera.mjs
+      - name: Spara schemat till nästa kontroll
+        run: |
+          git add notiser/senast
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Schemat kontrollerat"
+          git pull --rebase
+          git push

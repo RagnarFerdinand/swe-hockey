@@ -1,0 +1,11 @@
+{
+  "name": "swehockey-notiser",
+  "private": true,
+  "type": "module",
+  "description": "Kontrollerar varje timme om matcher flyttats och skickar webbnotiser till dem som vill veta.",
+  "dependencies": {
+    "firebase-admin": "^14.4.0",
+    "linkedom": "^0.18.13",
+    "web-push": "^3.6.7"
+  }
+}

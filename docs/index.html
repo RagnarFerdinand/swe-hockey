@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b2545">
 <meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="ikon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Matcher">
 <title>Matcher i tidsordning</title>
 <style>
   :root {
@@ -43,6 +48,15 @@
   .flyttad { color: var(--idag); font-weight: 600; }
   a { color: var(--accent); }
   footer { font-size: 12px; color: var(--svag); text-align: center; padding: 0 16px 30px; }
+  .notis { max-width: 720px; margin: 10px auto 0; padding: 0 16px; }
+  .notis > div { background: var(--kort); border: 1px solid var(--linje); border-radius: 10px; padding: 10px 12px; }
+  .notis.pa > div { border-color: var(--egetkant); }
+  .notis button { font: inherit; font-weight: 600; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--accent);
+    background: var(--accent); color: #fff; }
+  .notis.pa button { background: transparent; color: var(--accent); }
+  .notis p { margin: 6px 0 0; font-size: 13px; color: var(--svag); }
+  .notis p:first-child { margin-top: 0; }
+  .dela-ikon { width: 14px; height: 16px; vertical-align: -2px; }
 </style>
 </head>
 <body>
@@ -60,10 +74,17 @@
   <label class="rad"><input type="checkbox" id="visaSpelade"> Visa spelade matcher</label>
 </div>
 
+<div id="notis" class="notis" hidden><div>
+  <button id="notis-knapp" type="button"></button>
+  <p id="notis-text"></p>
+</div></div>
+
 <main id="lista"><p class="status">Hämtar…</p></main>
 <footer id="fot"></footer>
 
-<script>
+<script type="module">
+import { lasSchema, ren } from './schema.js';
+
 const BAS = 'https://stats.swehockey.se';
 const $ = id => document.getElementById(id);
 const sparat = (() => { try { return JSON.parse(localStorage.getItem('val') || '{}'); } catch { return {}; } })();
@@ -82,7 +103,6 @@ async function hamta(sokvag) {
   p.catch(() => cache.delete(sokvag));
   return p;
 }
-const ren = s => (s || '').replace(/\s+/g, ' ').trim();
 
 // Swehockeys rullgardiner har en rubrik (h5 eller label) strax före sig: "Clubs in …", "Tournament", "Group"
 function rullgardin(doc, rubrik) {
@@ -164,35 +184,8 @@ async function laddaMatcher() {
   visa();
 }
 
-function lasSchema(doc) {
-  const rader = [];
-  let datum = null;
-  for (const tr of doc.querySelectorAll('table.tblContent tr, table tr')) {
-    if (!tr.querySelector('.lnkTooltip')) continue;
-    if (rader.some(r => r.tr === tr)) continue;
-    const celler = [...tr.children].map(td => ren(td.textContent));
-    const d = celler.join(' ').match(/\d{4}-\d{2}-\d{2}/);
-    if (d) datum = d[0];
-    const tip = tr.querySelector('.lnkTooltip');
-    const tipText = ren(tip.textContent);
-    const tid = /^\d{1,2}:\d{2}$/.test(tipText) ? tipText
-      : (celler.find(c => /^\d{1,2}:\d{2}$/.test(c)) || (celler.join(' ').match(/\b\d{1,2}:\d{2}\b/) || [])[0] || '');
-    const nrText = ren(tip.getAttribute('title'));
-    const lagCell = /^\d{1,2}:\d{2}$/.test(tipText)
-      ? celler.find(c => / - /.test(c) && !/^\d+ - \d+$/.test(c) && !/^\(/.test(c))
-      : tipText;
-    if (!lagCell) continue;
-    const [hemma, borta] = lagCell.split(' - ').map(ren);
-    const resultat = celler.find(c => /^\d+ - \d+$/.test(c)) || '';
-    const perioder = celler.find(c => /^\(.*\)$/.test(c)) || '';
-    const arena = celler[celler.length - 1];
-    const lank = tr.querySelector('a[href*="openonlinewindow"]')?.getAttribute('href').match(/'([^']+)'/)?.[1];
-    rader.push({ tr, datum, tid: tid === '00:00' ? '' : tid, nr: nrText, hemma, borta, resultat, perioder, arena, lank });
-  }
-  return rader.map(({ tr, ...r }, i) => ({ ...r, ordning: i }));
-}
-
 function visa() {
+  notisValAndrat();
   const lag = $('lag').value;
   const visaSpelade = $('visaSpelade').checked;
   const idag = new Date().toLocaleDateString('sv-SE');
@@ -251,7 +244,147 @@ for (const k of nedstroms) {
 $('visaSpelade').checked = !!sparat.visaSpelade;
 $('visaSpelade').addEventListener('change', () => { sparat.visaSpelade = $('visaSpelade').checked; spara(); visa(); });
 
-laddaDistrikt().catch(fel);
+// ── Notiser ─────────────────────────────────────────────────────────────
+//
+// Önskemål 2026-09-17: en notis när en match flyttas. Byggt som i Ras/Domare.
+// Webbläsaren ger en anonym notisadress (push-prenumeration); den, gruppen och
+// laget sparas i projektets databas, inget annat. Kontrollen på GitHub jämför
+// schemat varje timme och skickar (notiser/kontrollera.mjs). Stängs notiserna
+// av raderas prenumerationen.
+
+const NOTIS_NYCKEL = 'BCRQhurbnYVOFWIP8NRbA4Zv0EXMg1rm3egA064iNSuq2PxZCgg82mAhhwY7F497U925dZU0an8A6iXsKenz308';
+// Projektets offentliga webbnyckel — en identifierare, ingen hemlighet.
+// Säkerheten är databasens regler (firestore.rules): skriva sin egen, aldrig läsa.
+const DB = 'https://firestore.googleapis.com/v1/projects/swehockey-matcher/databases/(default)/documents/notiser/';
+const WEBBNYCKEL = 'AIzaSyDOXqpVedfaxC3BsaO6nUdKehJ1cQuF4vQ';
+
+const kanNotiser = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+// En iPad i Safari säger sig vara en Mac. Pekskärmen avslöjar den — en Mac har ingen.
+const arIphone = /iPhone|iPad|iPod/.test(navigator.userAgent)
+  || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+const paHemskarmen = window.matchMedia?.('(display-mode: standalone)').matches || navigator.standalone === true;
+
+let tjanst = null;
+let prenumeration = null;
+let senastSparat = null;
+
+const base64TillBytes = b64 => {
+  const t = atob((b64 + '='.repeat((4 - (b64.length % 4)) % 4)).replace(/-/g, '+').replace(/_/g, '/'));
+  return Uint8Array.from(t, c => c.charCodeAt(0));
+};
+
+async function dokumentId(endpoint) {
+  const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(endpoint));
+  return [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+const lagText = () => $('lag').value === 'Alla lag' ? `lagen i ${$('grupp').selectedOptions[0]?.text || 'gruppen'}` : $('lag').value;
+
+async function sparaPrenumeration() {
+  if (!prenumeration || !$('grupp').value) return;
+  const val = `${$('grupp').value}|${$('lag').value}`;
+  if (val === senastSparat) return;
+  const id = await dokumentId(prenumeration.endpoint);
+  const sub = prenumeration.toJSON();
+  const kropp = { fields: {
+    subscription: { mapValue: { fields: {
+      endpoint: { stringValue: sub.endpoint },
+      expirationTime: sub.expirationTime == null ? { nullValue: null } : { integerValue: String(sub.expirationTime) },
+      keys: { mapValue: { fields: { p256dh: { stringValue: sub.keys.p256dh }, auth: { stringValue: sub.keys.auth } } } },
+    } } },
+    grupp: { stringValue: $('grupp').value },
+    lag: { stringValue: $('lag').value },
+    uppdaterad: { timestampValue: new Date().toISOString() },
+  } };
+  const r = await fetch(`${DB}${id}?key=${WEBBNYCKEL}`, {
+    method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(kropp),
+  });
+  if (!r.ok) throw new Error(`databasen svarade ${r.status}`);
+  senastSparat = val;
+}
+
+async function slutaPrenumerera() {
+  if (!prenumeration) return;
+  const id = await dokumentId(prenumeration.endpoint);
+  await fetch(`${DB}${id}?key=${WEBBNYCKEL}`, { method: 'DELETE' }).catch(() => {});
+  await prenumeration.unsubscribe().catch(() => {});
+  prenumeration = null;
+  senastSparat = null;
+}
+
+// Byts grupp eller lag följer notiserna med.
+function notisValAndrat() {
+  if (prenumeration) sparaPrenumeration().catch(e => console.warn('Notiser:', e));
+  ritaNotis();
+}
+
+function ritaNotis(meddelande) {
+  const ruta = $('notis'), knapp = $('notis-knapp'), text = $('notis-text');
+  if (!kanNotiser && !(arIphone && !paHemskarmen)) { ruta.hidden = true; return; }
+  ruta.hidden = !$('grupp').value;
+  if (arIphone && !paHemskarmen) {
+    knapp.hidden = true;
+    // Safaris Dela-ikon (ruta med pil uppåt), ritad här så att texten visar vad man ska leta efter.
+    const delaIkon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    delaIkon.setAttribute('viewBox', '0 0 20 24');
+    delaIkon.setAttribute('class', 'dela-ikon');
+    delaIkon.setAttribute('aria-label', 'Dela-ikonen');
+    delaIkon.innerHTML = '<path d="M10 2v13M5.5 6.5 10 2l4.5 4.5M6.5 10H3.5v12h13V10h-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>';
+    text.replaceChildren(
+      '🔔 Vill du ha en notis när en match flyttas? Tryck på Dela (', delaIkon,
+      '), sedan "Lägg till på hemskärmen", och öppna Matcher därifrån. Har du redan en ikon för sidan: ta bort den och lägg till den på nytt.');
+    return;
+  }
+  knapp.hidden = false;
+  if (Notification.permission === 'denied') {
+    knapp.hidden = true;
+    text.textContent = 'Notiser är avstängda för Matcher i telefonens inställningar.';
+    return;
+  }
+  ruta.classList.toggle('pa', !!prenumeration && !meddelande);
+  knapp.textContent = prenumeration ? 'Stäng av notiser' : '🔔 Få notis när en match flyttas';
+  text.textContent = meddelande ?? (prenumeration
+    ? `🔔 Notis på för ${lagText()}`
+    : 'Vi sparar bara en anonym notisadress från telefonen och vilket lag du valt — inget namn, ingen e-post. Stänger du av raderas det.');
+}
+
+$('notis-knapp').addEventListener('click', async () => {
+  const knapp = $('notis-knapp');
+  knapp.disabled = true;
+  try {
+    if (prenumeration) {
+      await slutaPrenumerera();
+      ritaNotis('Notiserna är avstängda.');
+    } else {
+      const svar = await Notification.requestPermission();
+      if (svar !== 'granted') { ritaNotis(); return; }
+      tjanst ??= await navigator.serviceWorker.register('sw.js');
+      await navigator.serviceWorker.ready;
+      prenumeration = await tjanst.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: base64TillBytes(NOTIS_NYCKEL) });
+      await sparaPrenumeration();
+      ritaNotis(`Klart — du får en notis när en match för ${lagText()} flyttas.`);
+    }
+  } catch (err) {
+    console.warn('Notiser:', err);
+    ritaNotis('Det gick inte att slå på notiser just nu. Försök igen senare.');
+  } finally {
+    knapp.disabled = false;
+  }
+});
+
+async function startaNotiser() {
+  if (kanNotiser) {
+    try {
+      tjanst = await navigator.serviceWorker.register('sw.js');
+      prenumeration = await tjanst.pushManager.getSubscription();
+    } catch (err) {
+      console.warn('Notiser:', err);
+    }
+  }
+  notisValAndrat();
+}
+
+laddaDistrikt().then(startaNotiser).catch(fel);
 </script>
 </body>
 </html>
