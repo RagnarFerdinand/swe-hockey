@@ -1,0 +1,341 @@
+{
+ "grupp": "21486",
+ "matcher": {
+  "15946002": {
+   "datum": "2026-10-18",
+   "tid": "12:30",
+   "arena": "Farsta Ishall",
+   "hemma": "FOC Farsta IF",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "15946003": {
+   "datum": "2026-11-07",
+   "tid": "13:00",
+   "arena": "Hammarens IP ishall",
+   "hemma": "IFK Mariefred",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "15946004": {
+   "datum": "2026-09-17",
+   "tid": "19:50",
+   "arena": "Järna Ishall",
+   "hemma": "Järna SK",
+   "borta": "Lidingö Vikings HC 2",
+   "resultat": ""
+  },
+  "15946005": {
+   "datum": "2026-10-16",
+   "tid": "19:30",
+   "arena": "Exakt Annex",
+   "hemma": "Lidingö Vikings HC 2",
+   "borta": "IFK Mariefred",
+   "resultat": ""
+  },
+  "15946006": {
+   "datum": "2026-09-26",
+   "tid": "09:30",
+   "arena": "Hemse Ishall",
+   "hemma": "Sudrets HC",
+   "borta": "FOC Farsta IF",
+   "resultat": ""
+  },
+  "15946007": {
+   "datum": "2026-09-26",
+   "tid": "09:30",
+   "arena": "Visby Ishall",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "Djurgårdens IF",
+   "resultat": ""
+  },
+  "15946009": {
+   "datum": "2026-10-17",
+   "tid": "13:30",
+   "arena": "Mälarhöjdens Ishall",
+   "hemma": "Djurgårdens IF",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "15946010": {
+   "datum": "2026-09-22",
+   "tid": "20:00",
+   "arena": "Farsta Ishall",
+   "hemma": "FOC Farsta IF",
+   "borta": "Lidingö Vikings HC 2",
+   "resultat": ""
+  },
+  "15946011": {
+   "datum": "2026-09-24",
+   "tid": "19:05",
+   "arena": "Hammarens IP ishall",
+   "hemma": "IFK Mariefred",
+   "borta": "Järna SK",
+   "resultat": ""
+  },
+  "15946013": {
+   "datum": "2026-10-16",
+   "tid": "19:50",
+   "arena": "Järna Ishall",
+   "hemma": "Järna SK",
+   "borta": "FOC Farsta IF",
+   "resultat": ""
+  },
+  "15946014": {
+   "datum": "2026-09-20",
+   "tid": "11:30",
+   "arena": "Exakt Arena",
+   "hemma": "Lidingö Vikings HC 2",
+   "borta": "Djurgårdens IF",
+   "resultat": ""
+  },
+  "15946015": {
+   "datum": "2026-09-17",
+   "tid": "18:00",
+   "arena": "Hemse Ishall",
+   "hemma": "Sudrets HC",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "15946017": {
+   "datum": "2026-10-11",
+   "tid": "15:30",
+   "arena": "Mälarhöjdens Ishall",
+   "hemma": "Djurgårdens IF",
+   "borta": "FOC Farsta IF",
+   "resultat": ""
+  },
+  "15946019": {
+   "datum": "2026-10-03",
+   "tid": "11:20",
+   "arena": "Hammarens IP ishall",
+   "hemma": "IFK Mariefred",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "15946020": {
+   "datum": "2026-11-14",
+   "tid": "14:00",
+   "arena": "Hemse Ishall",
+   "hemma": "Järna SK",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "15946021": {
+   "datum": "2026-09-15",
+   "tid": "19:00",
+   "arena": "Mälarhöjdens Ishall",
+   "hemma": "Djurgårdens IF",
+   "borta": "Järna SK",
+   "resultat": "14 - 0"
+  },
+  "15946022": {
+   "datum": "2026-10-04",
+   "tid": "14:00",
+   "arena": "Farsta Ishall",
+   "hemma": "FOC Farsta IF",
+   "borta": "IFK Mariefred",
+   "resultat": ""
+  },
+  "15946024": {
+   "datum": "2026-10-11",
+   "tid": "08:30",
+   "arena": "Visby Ishall",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "Lidingö Vikings HC 2",
+   "resultat": ""
+  },
+  "15946025": {
+   "datum": "2026-10-08",
+   "tid": "19:05",
+   "arena": "Hammarens IP ishall",
+   "hemma": "IFK Mariefred",
+   "borta": "Djurgårdens IF",
+   "resultat": ""
+  },
+  "15946026": {
+   "datum": "2026-11-15",
+   "tid": "12:45",
+   "arena": "Visby Ishall",
+   "hemma": "Järna SK",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "15946027": {
+   "datum": "2026-11-07",
+   "tid": "16:00",
+   "arena": "Exakt Annex",
+   "hemma": "Lidingö Vikings HC 2",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "15946030": {
+   "datum": "2026-09-26",
+   "tid": "13:15",
+   "arena": "Visby Ishall",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "FOC Farsta IF",
+   "resultat": ""
+  },
+  "15946031": {
+   "datum": "2026-10-11",
+   "tid": "09:00",
+   "arena": "Hemse Ishall",
+   "hemma": "Sudrets HC",
+   "borta": "IFK Mariefred",
+   "resultat": ""
+  },
+  "15946032": {
+   "datum": "2026-11-09",
+   "tid": "19:30",
+   "arena": "Exakt Annex",
+   "hemma": "Lidingö Vikings HC 2",
+   "borta": "Järna SK",
+   "resultat": ""
+  },
+  "15946033": {
+   "datum": "2026-10-10",
+   "tid": "14:00",
+   "arena": "Hemse Ishall",
+   "hemma": "IFK Mariefred",
+   "borta": "Lidingö Vikings HC 2",
+   "resultat": ""
+  },
+  "15946034": {
+   "datum": "2026-10-17",
+   "tid": "16:00",
+   "arena": "Farsta Ishall",
+   "hemma": "FOC Farsta IF",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "15946035": {
+   "datum": "2026-10-17",
+   "tid": "16:00",
+   "arena": "Mälarhöjdens Ishall",
+   "hemma": "Djurgårdens IF",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "15946037": {
+   "datum": "2026-09-26",
+   "tid": "12:30",
+   "arena": "Hemse Ishall",
+   "hemma": "Sudrets HC",
+   "borta": "Djurgårdens IF",
+   "resultat": ""
+  },
+  "15946038": {
+   "datum": "2026-09-18",
+   "tid": "18:00",
+   "arena": "Exakt Arena",
+   "hemma": "Lidingö Vikings HC 2",
+   "borta": "FOC Farsta IF",
+   "resultat": ""
+  },
+  "15946039": {
+   "datum": "2026-11-05",
+   "tid": "19:50",
+   "arena": "Järna Ishall",
+   "hemma": "Järna SK",
+   "borta": "IFK Mariefred",
+   "resultat": ""
+  },
+  "15946041": {
+   "datum": "2026-10-25",
+   "tid": "14:00",
+   "arena": "Farsta Ishall",
+   "hemma": "FOC Farsta IF",
+   "borta": "Järna SK",
+   "resultat": ""
+  },
+  "15946042": {
+   "datum": "2026-10-21",
+   "tid": "18:00",
+   "arena": "Mälarhöjdens Ishall",
+   "hemma": "Djurgårdens IF",
+   "borta": "Lidingö Vikings HC 2",
+   "resultat": ""
+  },
+  "15946043": {
+   "datum": "2026-10-22",
+   "tid": "18:30",
+   "arena": "Visby Ishall",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "15946045": {
+   "datum": "2026-11-06",
+   "tid": "18:00",
+   "arena": "Farsta Ishall",
+   "hemma": "FOC Farsta IF",
+   "borta": "Djurgårdens IF",
+   "resultat": ""
+  },
+  "15946047": {
+   "datum": "2026-10-10",
+   "tid": "10:10",
+   "arena": "Visby Ishall",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "IFK Mariefred",
+   "resultat": ""
+  },
+  "15946048": {
+   "datum": "2026-11-14",
+   "tid": "10:30",
+   "arena": "Hemse Ishall",
+   "hemma": "Sudrets HC",
+   "borta": "Järna SK",
+   "resultat": ""
+  },
+  "15946049": {
+   "datum": "2026-11-08",
+   "tid": "13:00",
+   "arena": "Järna Ishall",
+   "hemma": "Järna SK",
+   "borta": "Djurgårdens IF",
+   "resultat": ""
+  },
+  "15946050": {
+   "datum": "2026-09-17",
+   "tid": "19:05",
+   "arena": "Hammarens IP ishall",
+   "hemma": "IFK Mariefred",
+   "borta": "FOC Farsta IF",
+   "resultat": ""
+  },
+  "15946052": {
+   "datum": "2026-10-03",
+   "tid": "16:00",
+   "arena": "Exakt Annex",
+   "hemma": "Lidingö Vikings HC 2",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "15946053": {
+   "datum": "2026-11-11",
+   "tid": "18:00",
+   "arena": "Mälarhöjdens Ishall",
+   "hemma": "Djurgårdens IF",
+   "borta": "IFK Mariefred",
+   "resultat": ""
+  },
+  "15946054": {
+   "datum": "2026-11-15",
+   "tid": "09:00",
+   "arena": "Visby Ishall",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "Järna SK",
+   "resultat": ""
+  },
+  "15946055": {
+   "datum": "2026-10-10",
+   "tid": "11:30",
+   "arena": "Hemse Ishall",
+   "hemma": "Sudrets HC",
+   "borta": "Lidingö Vikings HC 2",
+   "resultat": ""
+  }
+ }
+}
