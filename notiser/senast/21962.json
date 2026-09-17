@@ -1,0 +1,1445 @@
+{
+ "grupp": "21962",
+ "matcher": {
+  "Pool:1,Game:1|Flemingsbergs IK svart|Sudrets HC": {
+   "datum": "2026-10-10",
+   "tid": "11:30",
+   "arena": "Björkängshallen / Huddinge IK",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:1|Huddinge IK vit|Trångsunds IF vit": {
+   "datum": "2026-10-10",
+   "tid": "11:30",
+   "arena": "Björkängshallen",
+   "hemma": "Huddinge IK vit",
+   "borta": "Trångsunds IF vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:1|Flemingsbergs IK svart|Huddinge IK vit": {
+   "datum": "2026-10-10",
+   "tid": "11:55",
+   "arena": "Björkängshallen",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Huddinge IK vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:1|Trångsunds IF vit|Sudrets HC": {
+   "datum": "2026-10-10",
+   "tid": "11:55",
+   "arena": "Björkängshallen",
+   "hemma": "Trångsunds IF vit",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:1|Flemingsbergs IK svart|Trångsunds IF vit": {
+   "datum": "2026-10-10",
+   "tid": "12:20",
+   "arena": "Björkängshallen",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Trångsunds IF vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:1|Sudrets HC|Huddinge IK vit": {
+   "datum": "2026-10-10",
+   "tid": "12:20",
+   "arena": "Björkängshallen",
+   "hemma": "Sudrets HC",
+   "borta": "Huddinge IK vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:2|Flemingsbergs IK gul|Visby-Roma HK Ungdom": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Stortorpshallen / Trångsunds IF",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:2|Huddinge IK röd|Trångsunds IF röd": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Huddinge IK röd",
+   "borta": "Trångsunds IF röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:2|Flemingsbergs IK gul|Huddinge IK röd": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:2|Trångsunds IF röd|Visby-Roma HK Ungdom": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Trångsunds IF röd",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:2|Flemingsbergs IK gul|Trångsunds IF röd": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Trångsunds IF röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:2|Visby-Roma HK Ungdom|Huddinge IK röd": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:3|Haninge Anchors HC röd|Nynäshamns IF HC vit": {
+   "datum": "2026-10-10",
+   "tid": "14:30",
+   "arena": "HLL Arena / Nynäshamns IF HC",
+   "hemma": "Haninge Anchors HC röd",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:3|IFK Salem vit|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-10-10",
+   "tid": "14:30",
+   "arena": "HLL Arena",
+   "hemma": "IFK Salem vit",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:3|Haninge Anchors HC röd|IFK Salem vit": {
+   "datum": "2026-10-10",
+   "tid": "15:00",
+   "arena": "HLL Arena",
+   "hemma": "Haninge Anchors HC röd",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:3|Segeltorps IF Ishockeyförening|Nynäshamns IF HC vit": {
+   "datum": "2026-10-10",
+   "tid": "15:00",
+   "arena": "HLL Arena",
+   "hemma": "Segeltorps IF Ishockeyförening",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:3|Haninge Anchors HC röd|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-10-10",
+   "tid": "15:30",
+   "arena": "HLL Arena",
+   "hemma": "Haninge Anchors HC röd",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:3|Nynäshamns IF HC vit|IFK Salem vit": {
+   "datum": "2026-10-10",
+   "tid": "15:30",
+   "arena": "HLL Arena",
+   "hemma": "Nynäshamns IF HC vit",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:4|Mälarö Hockeyförening svart|Nynäshamns IF HC blå": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Torvalla Ishall / Haninge Anchors HC",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:4|Haninge Anchors HC blå|IFK Tumba IK": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Haninge Anchors HC blå",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:4|Mälarö Hockeyförening svart|Haninge Anchors HC blå": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:4|IFK Tumba IK|Nynäshamns IF HC blå": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "IFK Tumba IK",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:4|Mälarö Hockeyförening svart|IFK Tumba IK": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:4|Nynäshamns IF HC blå|Haninge Anchors HC blå": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Nynäshamns IF HC blå",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:5|Mälarö Hockeyförening grön|IFK Salem grön": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Allhallen / Mälarö Hockeyförening",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:5|Tyresö Hanviken Hockey gul|Tullinge TP HC": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Tyresö Hanviken Hockey gul",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:5|Mälarö Hockeyförening grön|Tyresö Hanviken Hockey gul": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:5|Tullinge TP HC|IFK Salem grön": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Tullinge TP HC",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:5|Mälarö Hockeyförening grön|Tullinge TP HC": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:5|IFK Salem grön|Tyresö Hanviken Hockey gul": {
+   "datum": "2026-10-10",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "IFK Salem grön",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:6|Trångsunds IF vit|Visby-Roma HK Ungdom": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Salems Ishall / IFK Salem",
+   "hemma": "Trångsunds IF vit",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:6|Tullinge TP HC|IFK Salem vit": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Tullinge TP HC",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:6|Trångsunds IF vit|Tullinge TP HC": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Trångsunds IF vit",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:6|IFK Salem vit|Visby-Roma HK Ungdom": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "IFK Salem vit",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:6|Trångsunds IF vit|IFK Salem vit": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Trångsunds IF vit",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:6|Visby-Roma HK Ungdom|Tullinge TP HC": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:7|Huddinge IK vit|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Segeltorpshallen / Segeltorps IF Ishockeyförening",
+   "hemma": "Huddinge IK vit",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:7|IFK Tumba IK|IFK Salem grön": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "IFK Tumba IK",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:7|Huddinge IK vit|IFK Tumba IK": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "Huddinge IK vit",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:7|IFK Salem grön|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "IFK Salem grön",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:7|Huddinge IK vit|IFK Salem grön": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "Huddinge IK vit",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:7|Segeltorps IF Ishockeyförening|IFK Tumba IK": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "Segeltorps IF Ishockeyförening",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:8|Mälarö Hockeyförening svart|Haninge Anchors HC röd": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Torvalla Ishall / Haninge Anchors HC",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:8|Huddinge IK röd|Trångsunds IF röd": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Huddinge IK röd",
+   "borta": "Trångsunds IF röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:8|Mälarö Hockeyförening svart|Huddinge IK röd": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:8|Trångsunds IF röd|Haninge Anchors HC röd": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Trångsunds IF röd",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:8|Mälarö Hockeyförening svart|Trångsunds IF röd": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Trångsunds IF röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:8|Haninge Anchors HC röd|Huddinge IK röd": {
+   "datum": "2026-11-07",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Haninge Anchors HC röd",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:9|Mälarö Hockeyförening grön|Sudrets HC": {
+   "datum": "2026-11-07",
+   "tid": "15:30",
+   "arena": "Visättra Ishall / Flemingsbergs IK",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:9|Flemingsbergs IK gul|Nynäshamns IF HC vit": {
+   "datum": "2026-11-07",
+   "tid": "15:30",
+   "arena": "Visättra Ishall",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:9|Mälarö Hockeyförening grön|Flemingsbergs IK gul": {
+   "datum": "2026-11-07",
+   "tid": "16:00",
+   "arena": "Visättra Ishall",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Flemingsbergs IK gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:9|Nynäshamns IF HC vit|Sudrets HC": {
+   "datum": "2026-11-07",
+   "tid": "16:00",
+   "arena": "Visättra Ishall",
+   "hemma": "Nynäshamns IF HC vit",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:9|Mälarö Hockeyförening grön|Nynäshamns IF HC vit": {
+   "datum": "2026-11-07",
+   "tid": "16:30",
+   "arena": "Visättra Ishall",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:9|Sudrets HC|Flemingsbergs IK gul": {
+   "datum": "2026-11-07",
+   "tid": "16:30",
+   "arena": "Visättra Ishall",
+   "hemma": "Sudrets HC",
+   "borta": "Flemingsbergs IK gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:10|Flemingsbergs IK svart|Nynäshamns IF HC blå": {
+   "datum": "2026-11-07",
+   "tid": "13:00",
+   "arena": "Fontanahallen / Hanvikens SK",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:10|Haninge Anchors HC blå|Tyresö Hanviken Hockey gul": {
+   "datum": "2026-11-07",
+   "tid": "13:00",
+   "arena": "Fontanahallen",
+   "hemma": "Haninge Anchors HC blå",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:10|Flemingsbergs IK svart|Haninge Anchors HC blå": {
+   "datum": "2026-11-07",
+   "tid": "13:20",
+   "arena": "Fontanahallen",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:10|Tyresö Hanviken Hockey gul|Nynäshamns IF HC blå": {
+   "datum": "2026-11-07",
+   "tid": "13:20",
+   "arena": "Fontanahallen",
+   "hemma": "Tyresö Hanviken Hockey gul",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:10|Flemingsbergs IK svart|Tyresö Hanviken Hockey gul": {
+   "datum": "2026-11-07",
+   "tid": "13:55",
+   "arena": "Fontanahallen",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:10|Nynäshamns IF HC blå|Haninge Anchors HC blå": {
+   "datum": "2026-11-07",
+   "tid": "13:55",
+   "arena": "Fontanahallen",
+   "hemma": "Nynäshamns IF HC blå",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:11|Flemingsbergs IK svart|IFK Tumba IK": {
+   "datum": "2026-11-21",
+   "tid": "18:00",
+   "arena": "Visättra Ishall / Flemingsbergs IK",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:11|Haninge Anchors HC röd|Tullinge TP HC": {
+   "datum": "2026-11-21",
+   "tid": "18:00",
+   "arena": "Visättra Ishall",
+   "hemma": "Haninge Anchors HC röd",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:11|Flemingsbergs IK svart|Haninge Anchors HC röd": {
+   "datum": "2026-11-21",
+   "tid": "18:30",
+   "arena": "Visättra Ishall",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:11|Tullinge TP HC|IFK Tumba IK": {
+   "datum": "2026-11-21",
+   "tid": "18:30",
+   "arena": "Visättra Ishall",
+   "hemma": "Tullinge TP HC",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:11|Flemingsbergs IK svart|Tullinge TP HC": {
+   "datum": "2026-11-21",
+   "tid": "19:00",
+   "arena": "Visättra Ishall",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:11|IFK Tumba IK|Haninge Anchors HC röd": {
+   "datum": "2026-11-21",
+   "tid": "19:00",
+   "arena": "Visättra Ishall",
+   "hemma": "IFK Tumba IK",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:12|Huddinge IK vit|Visby-Roma HK Ungdom": {
+   "datum": "2026-11-21",
+   "tid": "14:00",
+   "arena": "HLL Arena / Nynäshamns IF HC",
+   "hemma": "Huddinge IK vit",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:12|IFK Salem grön|Nynäshamns IF HC blå": {
+   "datum": "2026-11-21",
+   "tid": "14:00",
+   "arena": "HLL Arena",
+   "hemma": "IFK Salem grön",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:12|Huddinge IK vit|IFK Salem grön": {
+   "datum": "2026-11-21",
+   "tid": "14:30",
+   "arena": "HLL Arena",
+   "hemma": "Huddinge IK vit",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:12|Nynäshamns IF HC blå|Visby-Roma HK Ungdom": {
+   "datum": "2026-11-21",
+   "tid": "14:30",
+   "arena": "HLL Arena",
+   "hemma": "Nynäshamns IF HC blå",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:12|Huddinge IK vit|Nynäshamns IF HC blå": {
+   "datum": "2026-11-21",
+   "tid": "15:00",
+   "arena": "HLL Arena",
+   "hemma": "Huddinge IK vit",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:12|Visby-Roma HK Ungdom|IFK Salem grön": {
+   "datum": "2026-11-21",
+   "tid": "15:00",
+   "arena": "HLL Arena",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:13|Trångsunds IF röd|Sudrets HC": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Stortorpshallen / Trångsunds IF",
+   "hemma": "Trångsunds IF röd",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:13|Tyresö Hanviken Hockey gul|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Tyresö Hanviken Hockey gul",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:13|Trångsunds IF röd|Tyresö Hanviken Hockey gul": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Trångsunds IF röd",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:13|Segeltorps IF Ishockeyförening|Sudrets HC": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Segeltorps IF Ishockeyförening",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:13|Trångsunds IF röd|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Trångsunds IF röd",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:13|Sudrets HC|Tyresö Hanviken Hockey gul": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Sudrets HC",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:14|Mälarö Hockeyförening svart|Nynäshamns IF HC vit": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Allhallen / Mälarö Hockeyförening",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:14|Flemingsbergs IK gul|Trångsunds IF vit": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Trångsunds IF vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:14|Mälarö Hockeyförening svart|Flemingsbergs IK gul": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Flemingsbergs IK gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:14|Trångsunds IF vit|Nynäshamns IF HC vit": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Trångsunds IF vit",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:14|Mälarö Hockeyförening svart|Trångsunds IF vit": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Trångsunds IF vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:14|Nynäshamns IF HC vit|Flemingsbergs IK gul": {
+   "datum": "2026-11-21",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Nynäshamns IF HC vit",
+   "borta": "Flemingsbergs IK gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:15|Mälarö Hockeyförening grön|IFK Salem vit": {
+   "datum": "2026-11-22",
+   "tid": "08:15",
+   "arena": "Björkängshallens B-hall / Huddinge IK",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:15|Huddinge IK röd|Haninge Anchors HC blå": {
+   "datum": "2026-11-22",
+   "tid": "08:15",
+   "arena": "Björkängshallens B-hall",
+   "hemma": "Huddinge IK röd",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:15|Mälarö Hockeyförening grön|Huddinge IK röd": {
+   "datum": "2026-11-22",
+   "tid": "08:40",
+   "arena": "Björkängshallens B-hall",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:15|Haninge Anchors HC blå|IFK Salem vit": {
+   "datum": "2026-11-22",
+   "tid": "08:40",
+   "arena": "Björkängshallens B-hall",
+   "hemma": "Haninge Anchors HC blå",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:15|Mälarö Hockeyförening grön|Haninge Anchors HC blå": {
+   "datum": "2026-11-22",
+   "tid": "09:05",
+   "arena": "Björkängshallens B-hall",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:15|IFK Salem vit|Huddinge IK röd": {
+   "datum": "2026-11-22",
+   "tid": "09:05",
+   "arena": "Björkängshallens B-hall",
+   "hemma": "IFK Salem vit",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:16|Mälarö Hockeyförening svart|Sudrets HC": {
+   "datum": "2026-12-05",
+   "tid": "14:10",
+   "arena": "Ica Riksten Arena / Tullinge TP HC",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:16|Huddinge IK röd|Tullinge TP HC": {
+   "datum": "2026-12-05",
+   "tid": "14:10",
+   "arena": "Ica Riksten Arena",
+   "hemma": "Huddinge IK röd",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:16|Mälarö Hockeyförening svart|Huddinge IK röd": {
+   "datum": "2026-12-05",
+   "tid": "14:30",
+   "arena": "Ica Riksten Arena",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:16|Tullinge TP HC|Sudrets HC": {
+   "datum": "2026-12-05",
+   "tid": "14:30",
+   "arena": "Ica Riksten Arena",
+   "hemma": "Tullinge TP HC",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:16|Mälarö Hockeyförening svart|Tullinge TP HC": {
+   "datum": "2026-12-05",
+   "tid": "14:50",
+   "arena": "Ica Riksten Arena",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:16|Sudrets HC|Huddinge IK röd": {
+   "datum": "2026-12-05",
+   "tid": "14:50",
+   "arena": "Ica Riksten Arena",
+   "hemma": "Sudrets HC",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:17|Mälarö Hockeyförening grön|Haninge Anchors HC röd": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Allhallen / Mälarö Hockeyförening",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:17|Flemingsbergs IK gul|Huddinge IK vit": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Huddinge IK vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:17|Mälarö Hockeyförening grön|Flemingsbergs IK gul": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Flemingsbergs IK gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:17|Huddinge IK vit|Haninge Anchors HC röd": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Huddinge IK vit",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:17|Mälarö Hockeyförening grön|Huddinge IK vit": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Huddinge IK vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:17|Haninge Anchors HC röd|Flemingsbergs IK gul": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Allhallen",
+   "hemma": "Haninge Anchors HC röd",
+   "borta": "Flemingsbergs IK gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:18|Flemingsbergs IK svart|Nynäshamns IF HC blå": {
+   "datum": "2026-12-05",
+   "tid": "14:00",
+   "arena": "HLL Arena / Nynäshamns IF HC",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:18|Trångsunds IF röd|IFK Salem vit": {
+   "datum": "2026-12-05",
+   "tid": "14:00",
+   "arena": "HLL Arena",
+   "hemma": "Trångsunds IF röd",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:18|Flemingsbergs IK svart|Trångsunds IF röd": {
+   "datum": "2026-12-05",
+   "tid": "14:30",
+   "arena": "HLL Arena",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Trångsunds IF röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:18|IFK Salem vit|Nynäshamns IF HC blå": {
+   "datum": "2026-12-05",
+   "tid": "14:30",
+   "arena": "HLL Arena",
+   "hemma": "IFK Salem vit",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:18|Flemingsbergs IK svart|IFK Salem vit": {
+   "datum": "2026-12-05",
+   "tid": "15:00",
+   "arena": "HLL Arena",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:18|Nynäshamns IF HC blå|Trångsunds IF röd": {
+   "datum": "2026-12-05",
+   "tid": "15:00",
+   "arena": "HLL Arena",
+   "hemma": "Nynäshamns IF HC blå",
+   "borta": "Trångsunds IF röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:19|Tyresö Hanviken Hockey gul|Visby-Roma HK Ungdom": {
+   "datum": "2026-12-05",
+   "tid": "15:20",
+   "arena": "Ishuset / IFK Tumba IK",
+   "hemma": "Tyresö Hanviken Hockey gul",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:19|IFK Tumba IK|Nynäshamns IF HC vit": {
+   "datum": "2026-12-05",
+   "tid": "15:20",
+   "arena": "Ishuset",
+   "hemma": "IFK Tumba IK",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:19|Tyresö Hanviken Hockey gul|IFK Tumba IK": {
+   "datum": "2026-12-05",
+   "tid": "15:45",
+   "arena": "Ishuset",
+   "hemma": "Tyresö Hanviken Hockey gul",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:19|Nynäshamns IF HC vit|Visby-Roma HK Ungdom": {
+   "datum": "2026-12-05",
+   "tid": "15:45",
+   "arena": "Ishuset",
+   "hemma": "Nynäshamns IF HC vit",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:19|Tyresö Hanviken Hockey gul|Nynäshamns IF HC vit": {
+   "datum": "2026-12-05",
+   "tid": "16:10",
+   "arena": "Ishuset",
+   "hemma": "Tyresö Hanviken Hockey gul",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:19|Visby-Roma HK Ungdom|IFK Tumba IK": {
+   "datum": "2026-12-05",
+   "tid": "16:10",
+   "arena": "Ishuset",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:20|Trångsunds IF vit|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Stortorpshallen / Trångsunds IF",
+   "hemma": "Trångsunds IF vit",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:20|Haninge Anchors HC blå|IFK Salem grön": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Haninge Anchors HC blå",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:20|Trångsunds IF vit|Haninge Anchors HC blå": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Trångsunds IF vit",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:20|IFK Salem grön|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "IFK Salem grön",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:20|Trångsunds IF vit|IFK Salem grön": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Trångsunds IF vit",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:20|Segeltorps IF Ishockeyförening|Haninge Anchors HC blå": {
+   "datum": "2026-12-05",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Segeltorps IF Ishockeyförening",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:21|Mälarö Hockeyförening svart|IFK Salem vit": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall / IFK Salem",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:21|Huddinge IK vit|Tyresö Hanviken Hockey gul": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Huddinge IK vit",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:21|Mälarö Hockeyförening svart|Huddinge IK vit": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Huddinge IK vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:21|Tyresö Hanviken Hockey gul|IFK Salem vit": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Tyresö Hanviken Hockey gul",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:21|Mälarö Hockeyförening svart|Tyresö Hanviken Hockey gul": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:21|IFK Salem vit|Huddinge IK vit": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "IFK Salem vit",
+   "borta": "Huddinge IK vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:22|Mälarö Hockeyförening grön|Sudrets HC": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Stortorpshallen / Trångsunds IF",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:22|Trångsunds IF vit|IFK Tumba IK": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Trångsunds IF vit",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:22|Mälarö Hockeyförening grön|Trångsunds IF vit": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Trångsunds IF vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:22|IFK Tumba IK|Sudrets HC": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "IFK Tumba IK",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:22|Mälarö Hockeyförening grön|IFK Tumba IK": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:22|Sudrets HC|Trångsunds IF vit": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Stortorpshallen",
+   "hemma": "Sudrets HC",
+   "borta": "Trångsunds IF vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:23|Flemingsbergs IK svart|Nynäshamns IF HC vit": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall / IFK Salem",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:23|Huddinge IK röd|IFK Salem grön": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Huddinge IK röd",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:23|Flemingsbergs IK svart|Huddinge IK röd": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:23|IFK Salem grön|Nynäshamns IF HC vit": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "IFK Salem grön",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:23|Flemingsbergs IK svart|IFK Salem grön": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:23|Nynäshamns IF HC vit|Huddinge IK röd": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Salems Ishall",
+   "hemma": "Nynäshamns IF HC vit",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:24|Trångsunds IF röd|Visby-Roma HK Ungdom": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Torvalla Ishall / Haninge Anchors HC",
+   "hemma": "Trångsunds IF röd",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:24|Haninge Anchors HC röd|Nynäshamns IF HC blå": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Haninge Anchors HC röd",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:24|Trångsunds IF röd|Haninge Anchors HC röd": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Trångsunds IF röd",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:24|Nynäshamns IF HC blå|Visby-Roma HK Ungdom": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Nynäshamns IF HC blå",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:24|Trångsunds IF röd|Nynäshamns IF HC blå": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Trångsunds IF röd",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:24|Visby-Roma HK Ungdom|Haninge Anchors HC röd": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:25|Flemingsbergs IK gul|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Segeltorpshallen / Segeltorps IF Ishockeyförening",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:25|Haninge Anchors HC blå|Tullinge TP HC": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "Haninge Anchors HC blå",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:25|Flemingsbergs IK gul|Haninge Anchors HC blå": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:25|Tullinge TP HC|Segeltorps IF Ishockeyförening": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "Tullinge TP HC",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:25|Flemingsbergs IK gul|Tullinge TP HC": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:25|Segeltorps IF Ishockeyförening|Haninge Anchors HC blå": {
+   "datum": "2026-12-12",
+   "tid": "",
+   "arena": "Segeltorpshallen",
+   "hemma": "Segeltorps IF Ishockeyförening",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:26|Mälarö Hockeyförening svart|Visby-Roma HK Ungdom": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "HLL Arena / Nynäshamns IF HC",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:26|Nynäshamns IF HC blå|Sudrets HC": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "HLL Arena",
+   "hemma": "Nynäshamns IF HC blå",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:26|Mälarö Hockeyförening svart|Nynäshamns IF HC blå": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "HLL Arena",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:26|Sudrets HC|Visby-Roma HK Ungdom": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "HLL Arena",
+   "hemma": "Sudrets HC",
+   "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "Pool:1,Game:26|Mälarö Hockeyförening svart|Sudrets HC": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "HLL Arena",
+   "hemma": "Mälarö Hockeyförening svart",
+   "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:26|Visby-Roma HK Ungdom|Nynäshamns IF HC blå": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "HLL Arena",
+   "hemma": "Visby-Roma HK Ungdom",
+   "borta": "Nynäshamns IF HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:27|Mälarö Hockeyförening grön|Nynäshamns IF HC vit": {
+   "datum": "2027-01-16",
+   "tid": "09:00",
+   "arena": "Björkängshallen / Huddinge IK",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:27|Huddinge IK vit|Tullinge TP HC": {
+   "datum": "2027-01-16",
+   "tid": "09:00",
+   "arena": "Björkängshallen",
+   "hemma": "Huddinge IK vit",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:27|Mälarö Hockeyförening grön|Huddinge IK vit": {
+   "datum": "2027-01-16",
+   "tid": "09:25",
+   "arena": "Björkängshallen",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Huddinge IK vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:27|Tullinge TP HC|Nynäshamns IF HC vit": {
+   "datum": "2027-01-16",
+   "tid": "09:25",
+   "arena": "Björkängshallen",
+   "hemma": "Tullinge TP HC",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:27|Mälarö Hockeyförening grön|Tullinge TP HC": {
+   "datum": "2027-01-16",
+   "tid": "09:50",
+   "arena": "Björkängshallen",
+   "hemma": "Mälarö Hockeyförening grön",
+   "borta": "Tullinge TP HC",
+   "resultat": ""
+  },
+  "Pool:1,Game:27|Nynäshamns IF HC vit|Huddinge IK vit": {
+   "datum": "2027-01-16",
+   "tid": "09:50",
+   "arena": "Björkängshallen",
+   "hemma": "Nynäshamns IF HC vit",
+   "borta": "Huddinge IK vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:28|Flemingsbergs IK svart|IFK Salem vit": {
+   "datum": "2027-01-16",
+   "tid": "18:00",
+   "arena": "Visättra Ishall / Flemingsbergs IK",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:28|Huddinge IK röd|Trångsunds IF röd": {
+   "datum": "2027-01-16",
+   "tid": "18:00",
+   "arena": "Visättra Ishall",
+   "hemma": "Huddinge IK röd",
+   "borta": "Trångsunds IF röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:28|Flemingsbergs IK svart|Huddinge IK röd": {
+   "datum": "2027-01-16",
+   "tid": "18:30",
+   "arena": "Visättra Ishall",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:28|Trångsunds IF röd|IFK Salem vit": {
+   "datum": "2027-01-16",
+   "tid": "18:30",
+   "arena": "Visättra Ishall",
+   "hemma": "Trångsunds IF röd",
+   "borta": "IFK Salem vit",
+   "resultat": ""
+  },
+  "Pool:1,Game:28|Flemingsbergs IK svart|Trångsunds IF röd": {
+   "datum": "2027-01-16",
+   "tid": "19:00",
+   "arena": "Visättra Ishall",
+   "hemma": "Flemingsbergs IK svart",
+   "borta": "Trångsunds IF röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:28|IFK Salem vit|Huddinge IK röd": {
+   "datum": "2027-01-16",
+   "tid": "19:00",
+   "arena": "Visättra Ishall",
+   "hemma": "IFK Salem vit",
+   "borta": "Huddinge IK röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:29|Trångsunds IF vit|Segeltorps IF Ishockeyförening": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Torvalla Ishall / Haninge Anchors HC",
+   "hemma": "Trångsunds IF vit",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:29|Haninge Anchors HC blå|IFK Salem grön": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Haninge Anchors HC blå",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:29|Trångsunds IF vit|Haninge Anchors HC blå": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Trångsunds IF vit",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:29|IFK Salem grön|Segeltorps IF Ishockeyförening": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "IFK Salem grön",
+   "borta": "Segeltorps IF Ishockeyförening",
+   "resultat": ""
+  },
+  "Pool:1,Game:29|Trångsunds IF vit|IFK Salem grön": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Trångsunds IF vit",
+   "borta": "IFK Salem grön",
+   "resultat": ""
+  },
+  "Pool:1,Game:29|Segeltorps IF Ishockeyförening|Haninge Anchors HC blå": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Torvalla Ishall",
+   "hemma": "Segeltorps IF Ishockeyförening",
+   "borta": "Haninge Anchors HC blå",
+   "resultat": ""
+  },
+  "Pool:1,Game:30|Flemingsbergs IK gul|IFK Tumba IK": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Ishuset / IFK Tumba IK",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:30|Haninge Anchors HC röd|Tyresö Hanviken Hockey gul": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Ishuset",
+   "hemma": "Haninge Anchors HC röd",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:30|Flemingsbergs IK gul|Haninge Anchors HC röd": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Ishuset",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  },
+  "Pool:1,Game:30|Tyresö Hanviken Hockey gul|IFK Tumba IK": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Ishuset",
+   "hemma": "Tyresö Hanviken Hockey gul",
+   "borta": "IFK Tumba IK",
+   "resultat": ""
+  },
+  "Pool:1,Game:30|Flemingsbergs IK gul|Tyresö Hanviken Hockey gul": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Ishuset",
+   "hemma": "Flemingsbergs IK gul",
+   "borta": "Tyresö Hanviken Hockey gul",
+   "resultat": ""
+  },
+  "Pool:1,Game:30|IFK Tumba IK|Haninge Anchors HC röd": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Ishuset",
+   "hemma": "IFK Tumba IK",
+   "borta": "Haninge Anchors HC röd",
+   "resultat": ""
+  }
+ }
+}
