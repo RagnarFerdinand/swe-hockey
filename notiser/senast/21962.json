@@ -97,25 +97,25 @@
    "borta": "Huddinge IK röd",
    "resultat": ""
   },
-  "Pool:1,Game:3|Haninge Anchors HC röd|Nynäshamns IF HC vit": {
-   "datum": "2026-10-10",
-   "tid": "14:30",
-   "arena": "HLL Arena / Nynäshamns IF HC",
-   "hemma": "Haninge Anchors HC röd",
-   "borta": "Nynäshamns IF HC vit",
-   "resultat": ""
-  },
   "Pool:1,Game:3|IFK Salem vit|Segeltorps IF Ishockeyförening": {
    "datum": "2026-10-10",
-   "tid": "14:30",
-   "arena": "HLL Arena",
+   "tid": "02:00",
+   "arena": "HLL Arena / Nynäshamns IF HC",
    "hemma": "IFK Salem vit",
    "borta": "Segeltorps IF Ishockeyförening",
    "resultat": ""
   },
+  "Pool:1,Game:3|Haninge Anchors HC röd|Nynäshamns IF HC vit": {
+   "datum": "2026-10-10",
+   "tid": "16:00",
+   "arena": "HLL Arena",
+   "hemma": "Haninge Anchors HC röd",
+   "borta": "Nynäshamns IF HC vit",
+   "resultat": ""
+  },
   "Pool:1,Game:3|Haninge Anchors HC röd|IFK Salem vit": {
    "datum": "2026-10-10",
-   "tid": "15:00",
+   "tid": "16:30",
    "arena": "HLL Arena",
    "hemma": "Haninge Anchors HC röd",
    "borta": "IFK Salem vit",
@@ -123,7 +123,7 @@
   },
   "Pool:1,Game:3|Segeltorps IF Ishockeyförening|Nynäshamns IF HC vit": {
    "datum": "2026-10-10",
-   "tid": "15:00",
+   "tid": "16:30",
    "arena": "HLL Arena",
    "hemma": "Segeltorps IF Ishockeyförening",
    "borta": "Nynäshamns IF HC vit",
@@ -131,7 +131,7 @@
   },
   "Pool:1,Game:3|Haninge Anchors HC röd|Segeltorps IF Ishockeyförening": {
    "datum": "2026-10-10",
-   "tid": "15:30",
+   "tid": "17:00",
    "arena": "HLL Arena",
    "hemma": "Haninge Anchors HC röd",
    "borta": "Segeltorps IF Ishockeyförening",
@@ -139,7 +139,7 @@
   },
   "Pool:1,Game:3|Nynäshamns IF HC vit|IFK Salem vit": {
    "datum": "2026-10-10",
-   "tid": "15:30",
+   "tid": "17:00",
    "arena": "HLL Arena",
    "hemma": "Nynäshamns IF HC vit",
    "borta": "IFK Salem vit",
