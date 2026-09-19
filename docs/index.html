@@ -14,11 +14,14 @@
 <style>
   :root {
     --bg: #f4f6f9; --kort: #fff; --text: #14213d; --svag: #6b7280; --linje: #e3e7ee;
-    --accent: #0b5cad; --eget: #fff4d6; --egetkant: #f0b400; --idag: #d7263d;
+    --accent: #0b5cad; --idag: #d7263d;
+    /* Ett lag per färg när flera lag visas */
+    --f0: #e0a800; --f1: #2f7fe0; --f2: #1f9d57; --f3: #d6336c; --f4: #7b4fd6;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #0f141b; --kort: #19212c; --text: #e7ecf3; --svag: #95a0b0; --linje: #2a3441;
-      --accent: #6cb4ff; --eget: #3a2f10; --egetkant: #d9a200; --idag: #ff6b7d; }
+      --accent: #6cb4ff; --idag: #ff6b7d;
+      --f0: #f0c040; --f1: #5aa2f5; --f2: #3cc47a; --f3: #f06292; --f4: #a484f0; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text);
@@ -30,7 +33,7 @@
   .hjalp[aria-expanded="true"] { background: #fff; color: #0b2545; }
   header p { margin: 2px 0 0; font-size: 13px; opacity: .8; }
   .val { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 16px;
-    background: var(--kort); border-bottom: 1px solid var(--linje); position: sticky; top: 0; z-index: 2; }
+    background: var(--kort); border-bottom: 1px solid var(--linje); }
   .val label { font-size: 12px; color: var(--svag); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
   .val select { font-size: 16px; padding: 6px; border-radius: 8px; border: 1px solid var(--linje);
     background: var(--bg); color: var(--text); width: 100%; }
@@ -41,14 +44,21 @@
   h2.dag.idag { color: var(--idag); }
   .match { background: var(--kort); border: 1px solid var(--linje); border-radius: 10px; padding: 10px 12px;
     margin-bottom: 6px; display: grid; grid-template-columns: 52px 1fr auto; gap: 2px 10px; align-items: baseline; }
-  .match.eget { background: var(--eget); border-color: var(--egetkant); }
+  .match.farg { background: color-mix(in srgb, var(--farg) 13%, var(--kort)); border-color: color-mix(in srgb, var(--farg) 45%, var(--linje));
+    border-left: 6px solid var(--farg); }
+  .lagrad { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; }
+  .lagknapp { font: inherit; font-size: 14px; padding: 5px 10px; border-radius: 999px; border: 1.5px solid var(--linje);
+    background: var(--bg); color: var(--text); display: inline-flex; align-items: center; gap: 6px; max-width: 100%; }
+  .lagknapp:not(.lagg-till):not(.ta-bort)::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--farg); flex: none; }
+  .lagknapp.aktiv { border-color: var(--farg); background: color-mix(in srgb, var(--farg) 18%, var(--kort)); font-weight: 600; }
+  .lagknapp.lagg-till { color: var(--accent); border-style: dashed; }
+  .lagknapp.ta-bort { color: var(--svag); border-color: transparent; background: transparent; font-size: 13px; }
   .match.spelad { opacity: .6; }
   .tid { font-weight: 700; font-variant-numeric: tabular-nums; }
   .lag { font-weight: 600; }
   .lag b { font-weight: 800; }
   .res { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
   .info { grid-column: 2 / -1; font-size: 13px; color: var(--svag); }
-  .flyttad { color: var(--idag); font-weight: 600; }
   a { color: var(--accent); }
   footer { font-size: 12px; color: var(--svag); text-align: center; padding: 0 16px 30px; }
   .notis { background: var(--kort); border-bottom: 1px solid var(--linje); padding: 12px 16px; }
@@ -73,6 +83,7 @@
 </div>
 
 <div class="val">
+  <div id="lagrad" class="lagrad" hidden></div>
   <label>Distrikt <select id="distrikt"></select></label>
   <label>Förening <select id="forening"></select></label>
   <label>Årskull / serie <select id="serie"></select></label>
@@ -89,12 +100,25 @@ import { lasSchema, ren } from './schema.js';
 
 const BAS = 'https://stats.swehockey.se';
 const $ = id => document.getElementById(id);
-const sparat = (() => { try { return JSON.parse(localStorage.getItem('val') || '{}'); } catch { return {}; } })();
-const spara = () => { try { localStorage.setItem('val', JSON.stringify(sparat)); } catch {} };
+const las = (nyckel, annars) => { try { return JSON.parse(localStorage.getItem(nyckel)) ?? annars; } catch { return annars; } };
+const skriv = (nyckel, v) => { try { localStorage.setItem(nyckel, JSON.stringify(v)); } catch {} };
 
 // Förval: Sudrets HC, U14P Röd grupp 5
 const FORVAL = { distrikt: '/District/Gotland', forening: 'Sudrets HC', serie: 'U14P', grupp: '21486', lag: 'Sudrets HC' };
-const val = k => sparat[k] ?? FORVAL[k];
+
+// FLERA LAG — önskemål 2026-09-19: den som har barn i flera lag (Thomas har tre, fyra)
+// ska se allas matcher i samma lista, varje lag i sin egen färg. Väljarna ändrar det
+// lag som är markerat i raden ovanför dem. Tidigare sparades ett enda val under 'val'.
+const lagen = (() => {
+  const l = las('lagen', null);
+  if (Array.isArray(l) && l.length) return l;
+  const { visaSpelade, ...gammalt } = las('val', {});
+  return [gammalt];
+})();
+let aktiv = Math.min(las('aktivtLag', 0), lagen.length - 1);
+const MAX_LAG = 5;  // lika många som färgerna i CSS (--f0 … --f4)
+const sparaLagen = () => { skriv('lagen', lagen); skriv('aktivtLag', aktiv); };
+const val = k => lagen[aktiv][k] ?? (lagen.length === 1 ? FORVAL[k] : undefined);
 
 const cache = new Map();
 async function hamta(sokvag) {
@@ -105,6 +129,7 @@ async function hamta(sokvag) {
   p.catch(() => cache.delete(sokvag));
   return p;
 }
+const schemaSokvag = grupp => '/ScheduleAndResults/Schedule/' + grupp;
 
 // Swehockeys rullgardiner har en rubrik (h5 eller label) strax före sig: "Clubs in …", "Tournament", "Group"
 function rullgardin(doc, rubrik) {
@@ -168,42 +193,110 @@ async function laddaGrupper() {
   await laddaMatcher();
 }
 
-let matcher = [];
 async function laddaMatcher() {
   const id = $('grupp').value;
   if (!id) return tomt('Ingen grupp vald.');
   $('lista').innerHTML = '<p class="status">Hämtar matcher…</p>';
-  const f = $('distrikt').value;
-  const foreningSokvag = rullgardin(await hamta(f), 'Clubs in').find(p => p.namn === $('forening').value).sokvag;
-  const doc = await hamta(foreningSokvag.replace(/\/ScheduleAndResults\/\w+\/\d+.*/, '/ScheduleAndResults/Schedule/' + id));
-  matcher = lasSchema(doc);
+  const doc = await hamta(schemaSokvag(id));
+  const matcher = lasSchema(doc);
   const lag = [...new Set(matcher.flatMap(m => [m.hemma, m.borta]))].sort((a, b) => a.localeCompare(b, 'sv'));
   const valtLag = val('lag');
   fyll($('lag'), [{ namn: 'Alla lag' }, ...lag.map(namn => ({ namn }))],
     lag.includes(valtLag) ? valtLag : (lag.find(l => l.startsWith($('forening').value)) || 'Alla lag'));
+  // Hela valet sparas, så att laget kan visas och hämtas även när ett annat lag är markerat.
+  Object.assign(lagen[aktiv], {
+    distrikt: $('distrikt').value, forening: $('forening').value, serie: $('serie').value,
+    grupp: id, gruppNamn: $('grupp').selectedOptions[0]?.text || '', lag: $('lag').value,
+  });
+  sparaLagen();
   const uppd = ren(doc.querySelector('.tdTitleRight')?.textContent);
   $('fot').textContent = (uppd ? uppd.replace('Last update', 'Senast uppdaterad hos Swehockey') + ' · ' : '') + 'Källa: stats.swehockey.se';
-  visa();
+  await visa();
 }
 
-function visa() {
+const lagNamn = t => t.lag && t.lag !== 'Alla lag' ? t.lag : (t.gruppNamn || 'Alla lag');
+const spelarI = (t, m) => !t.lag || t.lag === 'Alla lag' || m.hemma === t.lag || m.borta === t.lag;
+
+function ritaLagrad() {
+  const rad = $('lagrad');
+  rad.hidden = false;
+  rad.replaceChildren(...lagen.map((t, i) => {
+    const knapp = document.createElement('button');
+    knapp.type = 'button';
+    knapp.className = 'lagknapp' + (i === aktiv ? ' aktiv' : '');
+    knapp.style.setProperty('--farg', `var(--f${i})`);
+    knapp.setAttribute('aria-pressed', String(i === aktiv));
+    knapp.textContent = `${t.serie || '…'} · ${lagNamn(t)}`;
+    knapp.addEventListener('click', () => {
+      if (i === aktiv) return;
+      aktiv = i; sparaLagen(); ritaLagrad();
+      laddaDistrikt().catch(fel);
+    });
+    return knapp;
+  }));
+  if (lagen.length < MAX_LAG) {
+    const ny = document.createElement('button');
+    ny.type = 'button';
+    ny.className = 'lagknapp lagg-till';
+    ny.textContent = '+ Lägg till lag';
+    ny.addEventListener('click', () => {
+      // Det nya laget börjar som en kopia av det markerade — oftast samma förening, annan årskull.
+      const { lag, grupp, gruppNamn, ...samma } = lagen[aktiv];
+      lagen.push(samma);
+      aktiv = lagen.length - 1; sparaLagen(); ritaLagrad();
+      laddaDistrikt().then(() => $('serie').focus()).catch(fel);
+    });
+    rad.append(ny);
+  }
+  if (lagen.length > 1) {
+    const bort = document.createElement('button');
+    bort.type = 'button';
+    bort.className = 'lagknapp ta-bort';
+    bort.textContent = 'Ta bort markerat lag';
+    bort.addEventListener('click', () => {
+      lagen.splice(aktiv, 1);
+      aktiv = 0; sparaLagen(); ritaLagrad();
+      laddaDistrikt().catch(fel);
+    });
+    rad.append(bort);
+  }
+}
+
+let visning = 0;
+async function visa() {
+  const denna = ++visning;
+  ritaLagrad();
   notisValAndrat();
-  const lag = $('lag').value;
+  const klara = lagen.filter(t => t.grupp);
+  const scheman = await Promise.all(klara.map(t => hamta(schemaSokvag(t.grupp)).then(lasSchema)));
+  if (denna !== visning) return;  // ett nyare val har redan ritat om
+
   const visaSpelade = $('visaSpelade').checked;
   const idag = new Date().toLocaleDateString('sv-SE');
-  const urval = matcher
-    .filter(m => lag === 'Alla lag' || m.hemma === lag || m.borta === lag)
-    .filter(m => visaSpelade || !m.resultat && m.datum >= idag)
-    .sort((a, b) => (a.datum + (a.tid || '99:99')).localeCompare(b.datum + (b.tid || '99:99')) || a.ordning - b.ordning);
+  const flera = lagen.length > 1;
+  // Samma match kan höra till två av lagen (syskon i samma grupp som möter varandra) — visas en gång.
+  const perMatch = new Map();
+  let antalSpelade = 0;
+  klara.forEach((t, i) => {
+    for (const m of scheman[i]) {
+      if (!spelarI(t, m)) continue;
+      if (m.resultat || m.datum < idag) antalSpelade++;
+      if (!visaSpelade && (m.resultat || m.datum < idag)) continue;
+      const nyckel = `${t.grupp}|${m.nr}|${m.hemma}|${m.borta}|${m.datum}`;
+      if (!perMatch.has(nyckel)) perMatch.set(nyckel, { ...m, farg: lagen.indexOf(t) });
+    }
+  });
+  const urval = [...perMatch.values()]
+    .sort((a, b) => (a.datum + (a.tid || '99:99')).localeCompare(b.datum + (b.tid || '99:99')) || a.farg - b.farg || a.ordning - b.ordning);
 
-  const antalSpelade = matcher.filter(m => (lag === 'Alla lag' || m.hemma === lag || m.borta === lag) && (m.resultat || m.datum < idag)).length;
-  $('undertext').textContent = `${$('serie').value} · ${$('grupp').selectedOptions[0]?.text || ''}`;
+  $('undertext').textContent = flera ? `${lagen.length} lag`
+    : `${$('serie').value} · ${$('grupp').selectedOptions[0]?.text || ''}`;
 
   if (!urval.length) {
     return tomt(antalSpelade && !visaSpelade ? `Inga kommande matcher. ${antalSpelade} spelade – bocka i "Visa spelade matcher".` : 'Inga matcher.');
   }
-  // Matchnummer i Swehockeys ordning, för att kunna se vilka som flyttats
-  const nrOrdning = [...matcher].filter(m => /^\d+$/.test(m.nr)).sort((a, b) => a.nr - b.nr);
+  const egnaLag = new Set(lagen.map(t => t.lag).filter(l => l && l !== 'Alla lag'));
+  const fet = n => egnaLag.has(n) ? `<b>${esc(n)}</b>` : esc(n);
   const html = [];
   let dag = null;
   for (const m of urval) {
@@ -214,10 +307,8 @@ function visa() {
       rubrik = rubrik[0].toUpperCase() + rubrik.slice(1);
       html.push(`<h2 class="dag${dag === idag ? ' idag' : ''}">${dag === idag ? 'Idag – ' : ''}${rubrik}</h2>`);
     }
-    const eget = lag !== 'Alla lag';
-    const fet = n => n === lag ? `<b>${esc(n)}</b>` : esc(n);
     const res = m.resultat ? (m.lank ? `<a href="${BAS}${m.lank}" target="_blank" rel="noopener">${esc(m.resultat)}</a>` : esc(m.resultat)) : '';
-    html.push(`<div class="match${m.resultat ? ' spelad' : ''}">
+    html.push(`<div class="match${m.resultat ? ' spelad' : ''}${flera ? ' farg' : ''}"${flera ? ` style="--farg: var(--f${m.farg})"` : ''}>
       <span class="tid">${esc(m.tid) || '–'}</span>
       <span class="lag">${fet(m.hemma)} – ${fet(m.borta)}</span>
       <span class="res">${res}</span>
@@ -236,21 +327,21 @@ const kedja = { distrikt: laddaForeningar, forening: laddaSerier, serie: laddaGr
 const nedstroms = ['distrikt', 'forening', 'serie', 'grupp', 'lag'];
 for (const k of nedstroms) {
   $(k).addEventListener('change', () => {
-    sparat[k] = $(k).value;
+    lagen[aktiv][k] = $(k).value;
     // Ett nytt val högre upp gör valen under ogiltiga
-    for (const u of nedstroms.slice(nedstroms.indexOf(k) + 1)) delete sparat[u];
-    spara();
-    (kedja[k] ? kedja[k]() : Promise.resolve(visa())).catch(fel);
+    for (const u of nedstroms.slice(nedstroms.indexOf(k) + 1)) delete lagen[aktiv][u];
+    sparaLagen();
+    (kedja[k] ? kedja[k]() : visa()).catch(fel);
   });
 }
-$('visaSpelade').checked = !!sparat.visaSpelade;
-$('visaSpelade').addEventListener('change', () => { sparat.visaSpelade = $('visaSpelade').checked; spara(); visa(); });
+$('visaSpelade').checked = !!las('visaSpelade', las('val', {}).visaSpelade);
+$('visaSpelade').addEventListener('change', () => { skriv('visaSpelade', $('visaSpelade').checked); visa().catch(fel); });
 
 // ── Notiser ─────────────────────────────────────────────────────────────
 //
 // Önskemål 2026-09-17: en notis när en match flyttas. Byggt som i Ras/Domare.
-// Webbläsaren ger en anonym notisadress (push-prenumeration); den, gruppen och
-// laget sparas i projektets databas, inget annat. Kontrollen på GitHub jämför
+// Webbläsaren ger en anonym notisadress (push-prenumeration); den och grupp +
+// lag för vart och ett av lagen sparas i projektets databas, inget annat. Kontrollen på GitHub jämför
 // schemat varje timme och skickar (notiser/kontrollera.mjs). Stängs notiserna
 // av raderas prenumerationen.
 
@@ -280,11 +371,13 @@ async function dokumentId(endpoint) {
   return [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-const lagText = () => $('lag').value === 'Alla lag' ? `lagen i ${$('grupp').selectedOptions[0]?.text || 'gruppen'}` : $('lag').value;
+const lagText = () => lagen.length > 1 ? 'dina lag'
+  : $('lag').value === 'Alla lag' ? `lagen i ${$('grupp').selectedOptions[0]?.text || 'gruppen'}` : $('lag').value;
 
 async function sparaPrenumeration() {
-  if (!prenumeration || !$('grupp').value) return;
-  const val = `${$('grupp').value}|${$('lag').value}`;
+  const mina = lagen.filter(t => t.grupp).map(t => ({ grupp: t.grupp, lag: t.lag || 'Alla lag' }));
+  if (!prenumeration || !mina.length) return;
+  const val = JSON.stringify(mina);
   if (val === senastSparat) return;
   const id = await dokumentId(prenumeration.endpoint);
   const sub = prenumeration.toJSON();
@@ -294,8 +387,9 @@ async function sparaPrenumeration() {
       expirationTime: sub.expirationTime == null ? { nullValue: null } : { integerValue: String(sub.expirationTime) },
       keys: { mapValue: { fields: { p256dh: { stringValue: sub.keys.p256dh }, auth: { stringValue: sub.keys.auth } } } },
     } } },
-    grupp: { stringValue: $('grupp').value },
-    lag: { stringValue: $('lag').value },
+    lagen: { arrayValue: { values: mina.map(t => ({ mapValue: { fields: {
+      grupp: { stringValue: t.grupp }, lag: { stringValue: t.lag },
+    } } })) } },
     uppdaterad: { timestampValue: new Date().toISOString() },
   } };
   const r = await fetch(`${DB}${id}?key=${WEBBNYCKEL}`, {
@@ -314,7 +408,7 @@ async function slutaPrenumerera() {
   senastSparat = null;
 }
 
-// Byts grupp eller lag följer notiserna med.
+// Byts, läggs till eller tas ett lag bort följer notiserna med.
 function notisValAndrat() {
   if (prenumeration) sparaPrenumeration().catch(e => console.warn('Notiser:', e));
   ritaNotis();
@@ -350,7 +444,7 @@ function ritaNotis(meddelande) {
   knapp.classList.toggle('av', !!prenumeration);
   text.textContent = meddelande ?? (prenumeration
     ? `🔔 Notis på för ${lagText()}`
-    : 'Vi sparar bara en anonym notisadress från telefonen och vilket lag du valt — inget namn, ingen e-post. Stänger du av raderas det.');
+    : 'Vi sparar bara en anonym notisadress från telefonen och vilka lag du valt — inget namn, ingen e-post. Stänger du av raderas det.');
 }
 
 // Notisrutan ligger bakom frågetecknet i rubriken — den ska inte ta plats bland matcherna.

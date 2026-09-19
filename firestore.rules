@@ -3,7 +3,8 @@ rules_version = '2';
 // Swe Hockey — bara notiserna bor i databasen. Sidan själv ligger på GitHub.
 //
 // En besökare som vill ha notis när en match flyttas sparar SIN notisadress
-// (webbläsarens push-prenumeration), vilken grupp och vilket lag. Inget namn,
+// (webbläsarens push-prenumeration) och sina lag — grupp + lag för vart och ett,
+// högst fem (flera lag sedan 2026-09-19; före dess fälten grupp och lag). Inget namn,
 // ingen e-post, ingen inloggning. Dokumentets id är en SHA-256 av notisadressen,
 // räknad i webbläsaren — den som inte har adressen kan inte gissa id:t.
 //
@@ -13,15 +14,14 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /notiser/{id} {
       allow read: if false;
-      allow create, update: if request.resource.data.keys().hasOnly(['subscription', 'grupp', 'lag', 'uppdaterad'])
+      allow create, update: if request.resource.data.keys().hasOnly(['subscription', 'lagen', 'uppdaterad'])
         && request.resource.data.subscription is map
         && request.resource.data.subscription.keys().hasOnly(['endpoint', 'keys', 'expirationTime'])
         && request.resource.data.subscription.endpoint is string
         && request.resource.data.subscription.endpoint.matches('https://.*')
-        && request.resource.data.grupp is string
-        && request.resource.data.grupp.matches('^[0-9]{1,9}$')
-        && request.resource.data.lag is string
-        && request.resource.data.lag.size() <= 100
+        && request.resource.data.lagen is list
+        && request.resource.data.lagen.size() >= 1
+        && request.resource.data.lagen.size() <= 5
         && request.resource.data.uppdaterad is timestamp;
       // Att stänga av notiserna raderar prenumerationen.
       allow delete: if true;

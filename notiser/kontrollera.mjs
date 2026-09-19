@@ -6,8 +6,10 @@
  * Ragnar valde notis från sidans egen ikon på hemskärmen, byggd som i Ras/Domare.
  * Körs varje timme på GitHub (.github/workflows/notiser.yml).
  *
- * VEM SOM FÅR: prenumerationerna i databasen (notiser/{id}) bär grupp och lag.
- * Bara de grupper någon prenumererar på kontrolleras.
+ * VEM SOM FÅR: prenumerationerna i databasen (notiser/{id}) bär en lista lag,
+ * grupp + lag för vart och ett (äldre prenumerationer: fälten grupp och lag).
+ * Bara de grupper någon prenumererar på kontrolleras. Den som följer flera lag
+ * får en notis per grupp där något av lagen fått en match flyttad.
  *
  * VAD SOM ÄR FLYTTAT: en ospelad, kommande match (samma matchnummer och lag) som fått
  * annat datum, annan tid eller annan ishall sedan förra kontrollen. Förra
@@ -51,6 +53,11 @@ initializeApp({ credential: cert(JSON.parse(readFileSync(KONTO, 'utf8'))) });
 const db = getFirestore();
 
 const prenumeranter = (await db.collection('notiser').get()).docs;
+const lagenFor = doc => {
+  const d = doc.data();
+  return (Array.isArray(d.lagen) ? d.lagen : [{ grupp: d.grupp, lag: d.lag }])
+    .filter(t => /^\d+$/.test(t?.grupp ?? ''));
+};
 console.log(`prenumerationer: ${prenumeranter.length}`);
 
 /** Skickar; en prenumeration som telefonen slängt (404/410) raderas. */
@@ -79,7 +86,7 @@ const nar = m => {
 };
 
 mkdirSync(SENAST, { recursive: true });
-const grupper = [...new Set(prenumeranter.map(d => d.data().grupp).filter(g => /^\d+$/.test(g ?? '')))];
+const grupper = [...new Set(prenumeranter.flatMap(d => lagenFor(d).map(t => t.grupp)))];
 
 for (const grupp of grupper) {
   let matcher;
@@ -117,9 +124,10 @@ for (const grupp of grupper) {
   if (flyttade.length === 0) continue;
   flyttade.sort((a, b) => (a.efter.datum + a.efter.tid).localeCompare(b.efter.datum + b.efter.tid));
 
-  for (const doc of prenumeranter.filter(d => d.data().grupp === grupp)) {
-    const lag = doc.data().lag;
-    const mina = flyttade.filter(f => !lag || lag === 'Alla lag' || f.efter.hemma === lag || f.efter.borta === lag);
+  for (const doc of prenumeranter) {
+    const lagIGruppen = lagenFor(doc).filter(t => t.grupp === grupp).map(t => t.lag);
+    if (!lagIGruppen.length) continue;
+    const mina = flyttade.filter(f => lagIGruppen.some(lag => !lag || lag === 'Alla lag' || f.efter.hemma === lag || f.efter.borta === lag));
     if (mina.length === 0) continue;
     const rader = mina.map(({ fore, efter }) => {
       const ny = [fore.datum !== efter.datum || fore.tid !== efter.tid ? `${nar(fore)} → ${nar(efter)}` : nar(efter)];
