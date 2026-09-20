@@ -61,6 +61,8 @@
   .info { grid-column: 2 / -1; font-size: 13px; color: var(--svag); }
   a { color: var(--accent); }
   footer { font-size: 12px; color: var(--svag); text-align: center; padding: 0 16px 30px; }
+  .igen { font: inherit; font-weight: 600; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--accent);
+    background: var(--accent); color: #fff; display: block; margin: 0 auto; }
   .notis { background: var(--kort); border-bottom: 1px solid var(--linje); padding: 12px 16px; }
   .notis h2 { margin: 0 0 8px; font-size: 15px; }
   .notis button { font: inherit; font-weight: 600; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--accent);
@@ -120,6 +122,23 @@ const MAX_LAG = 5;  // lika många som färgerna i CSS (--f0 … --f4)
 const sparaLagen = () => { skriv('lagen', lagen); skriv('aktivtLag', aktiv); };
 const val = k => lagen[aktiv][k] ?? (lagen.length === 1 ? FORVAL[k] : undefined);
 
+// SPARAT SVAR — 2026-09-20 mötte Ragnar en vit sida med tomma väljare: Swehockey
+// svarade inte just då. Allt som hämtas sparas därför i telefonen, och när Swehockey
+// inte går att nå visas det sparade i stället, med en rad om att det är gammalt.
+let visarSparat = false;
+async function medSparat(nyckel, hamtaNytt) {
+  try {
+    const farskt = await hamtaNytt();
+    skriv('sparat:' + nyckel, { tid: Date.now(), data: farskt });
+    return farskt;
+  } catch (err) {
+    const gammalt = las('sparat:' + nyckel, null);
+    if (!gammalt) throw err;
+    visarSparat = Math.min(visarSparat || Infinity, gammalt.tid);
+    return gammalt.data;
+  }
+}
+
 const cache = new Map();
 async function hamta(sokvag) {
   if (cache.has(sokvag)) return cache.get(sokvag);
@@ -154,42 +173,50 @@ function fyll(sel, poster, valt, text = p => p.namn, varde = p => p.namn) {
   return poster.find(p => varde(p) === sel.value);
 }
 
-async function laddaDistrikt() {
+const distriktLista = () => medSparat('distrikt', async () => {
   const doc = await hamta('/District/Gotland');
   const set = new Map();
   for (const a of doc.querySelectorAll('a[href^="/District/"]')) {
     const m = a.getAttribute('href').match(/^\/District\/[A-Za-z]+$/);
     if (m && !set.has(m[0])) set.set(m[0], ren(a.textContent));
   }
-  const poster = [...set].map(([sokvag, namn]) => ({ sokvag, namn })).sort((a, b) => a.namn.localeCompare(b.namn, 'sv'));
-  fyll($('distrikt'), poster, val('distrikt'), p => p.namn, p => p.sokvag);
+  return [...set].map(([sokvag, namn]) => ({ sokvag, namn })).sort((a, b) => a.namn.localeCompare(b.namn, 'sv'));
+});
+const foreningLista = () => medSparat('foreningar:' + $('distrikt').value,
+  async () => rullgardin(await hamta($('distrikt').value), 'Clubs in'));
+const serieLista = sokvag => medSparat('serier:' + sokvag,
+  async () => rullgardin(await hamta(sokvag), 'Tournament'));
+const gruppLista = sokvag => medSparat('grupper:' + sokvag,
+  async () => rullgardin(await hamta(sokvag), 'Group').map(p => ({ ...p, id: idUr(p.sokvag) })));
+const schemaLista = grupp => medSparat('schema:' + grupp, async () => {
+  const doc = await hamta(schemaSokvag(grupp));
+  const uppd = ren(doc.querySelector('.tdTitleRight')?.textContent);
+  return { uppd, matcher: lasSchema(doc) };
+});
+
+async function laddaDistrikt() {
+  visarSparat = false;
+  fyll($('distrikt'), await distriktLista(), val('distrikt'), p => p.namn, p => p.sokvag);
   await laddaForeningar();
 }
 
 async function laddaForeningar() {
-  const doc = await hamta($('distrikt').value);
-  const poster = rullgardin(doc, 'Clubs in');
-  fyll($('forening'), poster, val('forening'));
+  fyll($('forening'), await foreningLista(), val('forening'));
   await laddaSerier();
 }
 
 async function laddaSerier() {
-  const f = [...$('forening').options].length ? rullgardin(await hamta($('distrikt').value), 'Clubs in')
-    .find(p => p.namn === $('forening').value) : null;
+  const f = (await foreningLista()).find(p => p.namn === $('forening').value);
   if (!f) return tomt('Ingen förening hittades.');
-  const doc = await hamta(f.sokvag);
-  const poster = rullgardin(doc, 'Tournament');
-  fyll($('serie'), poster, val('serie'));
+  fyll($('serie'), await serieLista(f.sokvag), val('serie'));
   await laddaGrupper();
 }
 
 async function laddaGrupper() {
-  const f = rullgardin(await hamta($('distrikt').value), 'Clubs in').find(p => p.namn === $('forening').value);
-  const s = rullgardin(await hamta(f.sokvag), 'Tournament').find(p => p.namn === $('serie').value);
+  const f = (await foreningLista()).find(p => p.namn === $('forening').value);
+  const s = (await serieLista(f.sokvag)).find(p => p.namn === $('serie').value);
   if (!s) return tomt('Föreningen har inga serier.');
-  const doc = await hamta(s.sokvag);
-  const poster = rullgardin(doc, 'Group').map(p => ({ ...p, id: idUr(p.sokvag) }));
-  fyll($('grupp'), poster, val('grupp'), p => p.namn, p => p.id);
+  fyll($('grupp'), await gruppLista(s.sokvag), val('grupp'), p => p.namn, p => p.id);
   await laddaMatcher();
 }
 
@@ -197,8 +224,8 @@ async function laddaMatcher() {
   const id = $('grupp').value;
   if (!id) return tomt('Ingen grupp vald.');
   $('lista').innerHTML = '<p class="status">Hämtar matcher…</p>';
-  const doc = await hamta(schemaSokvag(id));
-  const matcher = lasSchema(doc);
+  const { matcher, uppd } = await schemaLista(id);
+  uppdText = uppd ? uppd.replace('Last update', 'Senast uppdaterad hos Swehockey') : '';
   const lag = [...new Set(matcher.flatMap(m => [m.hemma, m.borta]))].sort((a, b) => a.localeCompare(b, 'sv'));
   const valtLag = val('lag');
   fyll($('lag'), [{ namn: 'Alla lag' }, ...lag.map(namn => ({ namn }))],
@@ -209,8 +236,6 @@ async function laddaMatcher() {
     grupp: id, gruppNamn: $('grupp').selectedOptions[0]?.text || '', lag: $('lag').value,
   });
   sparaLagen();
-  const uppd = ren(doc.querySelector('.tdTitleRight')?.textContent);
-  $('fot').textContent = (uppd ? uppd.replace('Last update', 'Senast uppdaterad hos Swehockey') + ' · ' : '') + 'Källa: stats.swehockey.se';
   await visa();
 }
 
@@ -262,13 +287,14 @@ function ritaLagrad() {
   }
 }
 
+let uppdText = '';
 let visning = 0;
 async function visa() {
   const denna = ++visning;
   ritaLagrad();
   notisValAndrat();
   const klara = lagen.filter(t => t.grupp);
-  const scheman = await Promise.all(klara.map(t => hamta(schemaSokvag(t.grupp)).then(lasSchema)));
+  const scheman = (await Promise.all(klara.map(t => schemaLista(t.grupp)))).map(s => s.matcher);
   if (denna !== visning) return;  // ett nyare val har redan ritat om
 
   const visaSpelade = $('visaSpelade').checked;
@@ -316,12 +342,28 @@ async function visa() {
     </div>`);
   }
   $('lista').innerHTML = html.join('');
+  ritaFot();
   document.querySelector('h2.dag.idag')?.scrollIntoView({ block: 'start' });
+}
+
+function ritaFot() {
+  if (!visarSparat) { $('fot').textContent = (uppdText ? uppdText + ' · ' : '') + 'Källa: stats.swehockey.se'; return; }
+  const nar = new Date(visarSparat).toLocaleString('sv-SE', { weekday: 'long', hour: '2-digit', minute: '2-digit' });
+  $('fot').textContent = `Swehockey svarar inte just nu — visar schemat som hämtades ${nar}.`;
 }
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 function tomt(text) { $('lista').innerHTML = `<p class="status">${esc(text)}</p>`; }
-const fel = e => tomt('Kunde inte hämta från Swehockey (' + e.message + '). Försök igen om en stund.');
+function fel(e) {
+  console.warn('Hämtning:', e);
+  $('lista').innerHTML = '<p class="status">Kunde inte hämta från Swehockey, och det finns inget sparat schema att visa.</p>';
+  const knapp = document.createElement('button');
+  knapp.type = 'button';
+  knapp.className = 'igen';
+  knapp.textContent = 'Försök igen';
+  knapp.addEventListener('click', () => { cache.clear(); visarSparat = false; $('lista').innerHTML = '<p class="status">Hämtar…</p>'; laddaDistrikt().catch(fel); });
+  $('lista').append(knapp);
+}
 
 const kedja = { distrikt: laddaForeningar, forening: laddaSerier, serie: laddaGrupper, grupp: laddaMatcher };
 const nedstroms = ['distrikt', 'forening', 'serie', 'grupp', 'lag'];
