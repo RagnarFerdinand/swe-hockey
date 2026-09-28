@@ -217,14 +217,6 @@
    "borta": "Sudrets HC",
    "resultat": ""
   },
-  "15946002|FOC Farsta IF|Visby-Roma HK Ungdom": {
-   "datum": "2026-10-18",
-   "tid": "12:30",
-   "arena": "Farsta Ishall",
-   "hemma": "FOC Farsta IF",
-   "borta": "Visby-Roma HK Ungdom",
-   "resultat": ""
-  },
   "15946042|Djurgårdens IF|Lidingö Vikings HC 2": {
    "datum": "2026-10-21",
    "tid": "18:00",
@@ -279,6 +271,14 @@
    "arena": "Exakt Annex",
    "hemma": "Lidingö Vikings HC 2",
    "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "15946002|FOC Farsta IF|Visby-Roma HK Ungdom": {
+   "datum": "2026-11-07",
+   "tid": "16:00",
+   "arena": "Farsta Ishall",
+   "hemma": "FOC Farsta IF",
+   "borta": "Visby-Roma HK Ungdom",
    "resultat": ""
   },
   "15946049|Järna SK|Djurgårdens IF": {
