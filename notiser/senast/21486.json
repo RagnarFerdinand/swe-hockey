@@ -249,14 +249,6 @@
    "borta": "IFK Mariefred",
    "resultat": ""
   },
-  "15946045|FOC Farsta IF|Djurgårdens IF": {
-   "datum": "2026-11-06",
-   "tid": "18:00",
-   "arena": "Farsta Ishall",
-   "hemma": "FOC Farsta IF",
-   "borta": "Djurgårdens IF",
-   "resultat": ""
-  },
   "15946003|IFK Mariefred|Sudrets HC": {
    "datum": "2026-11-07",
    "tid": "13:00",
@@ -335,6 +327,14 @@
    "arena": "Visby Ishall",
    "hemma": "Järna SK",
    "borta": "Visby-Roma HK Ungdom",
+   "resultat": ""
+  },
+  "15946045|FOC Farsta IF|Djurgårdens IF": {
+   "datum": "2026-11-16",
+   "tid": "18:00",
+   "arena": "Farsta Ishall",
+   "hemma": "FOC Farsta IF",
+   "borta": "Djurgårdens IF",
    "resultat": ""
   }
  }
