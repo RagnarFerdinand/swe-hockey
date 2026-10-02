@@ -201,14 +201,6 @@
    "borta": "Sudrets HC",
    "resultat": ""
   },
-  "15946035|Djurgårdens IF|Visby-Roma HK Ungdom": {
-   "datum": "2026-10-17",
-   "tid": "16:00",
-   "arena": "Mälarhöjdens Ishall",
-   "hemma": "Djurgårdens IF",
-   "borta": "Visby-Roma HK Ungdom",
-   "resultat": ""
-  },
   "15946009|Djurgårdens IF|Sudrets HC": {
    "datum": "2026-10-17",
    "tid": "13:30",
@@ -271,6 +263,14 @@
    "arena": "Exakt Annex",
    "hemma": "Lidingö Vikings HC 2",
    "borta": "Sudrets HC",
+   "resultat": ""
+  },
+  "15946035|Djurgårdens IF|Visby-Roma HK Ungdom": {
+   "datum": "2026-11-07",
+   "tid": "13:30",
+   "arena": "Mälarhöjdens Ishall",
+   "hemma": "Djurgårdens IF",
+   "borta": "Visby-Roma HK Ungdom",
    "resultat": ""
   },
   "15946049|Järna SK|Djurgårdens IF": {
