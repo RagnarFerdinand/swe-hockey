@@ -41,21 +41,13 @@
    "borta": "Boo HC 2",
    "resultat": "0 - 2"
   },
-  "15885006|Team Söderort(FOC/THH/HA)|Boo HC 2": {
-   "datum": "2026-09-20",
-   "tid": "",
-   "arena": "Hanvedens ishall",
-   "hemma": "Team Söderort(FOC/THH/HA)",
-   "borta": "Boo HC 2",
-   "resultat": ""
-  },
   "15885001|Sudrets HC/Visby Roma HK Ungdom|Team Söderort(FOC/THH/HA)": {
    "datum": "2026-09-20",
    "tid": "11:30",
    "arena": "Hemse Ishall",
    "hemma": "Sudrets HC/Visby Roma HK Ungdom",
    "borta": "Team Söderort(FOC/THH/HA)",
-   "resultat": ""
+   "resultat": "6 - 1"
   },
   "15885004|Huddinge IK|Södertälje SK": {
    "datum": "2026-09-22",
@@ -63,15 +55,7 @@
    "arena": "Björkängshallen",
    "hemma": "Huddinge IK",
    "borta": "Södertälje SK",
-   "resultat": ""
-  },
-  "15885007|Sudrets HC/Visby Roma HK Ungdom|Södertälje SK": {
-   "datum": "2026-09-26",
-   "tid": "",
-   "arena": "Hemse Ishall",
-   "hemma": "Sudrets HC/Visby Roma HK Ungdom",
-   "borta": "Södertälje SK",
-   "resultat": ""
+   "resultat": "7 - 0"
   },
   "15885009|Huddinge IK|Team Söderort(FOC/THH/HA)": {
    "datum": "2026-09-26",
@@ -79,15 +63,7 @@
    "arena": "Björkängshallen",
    "hemma": "Huddinge IK",
    "borta": "Team Söderort(FOC/THH/HA)",
-   "resultat": ""
-  },
-  "15885012|Värmdö HC|Team Söderort(FOC/THH/HA)": {
-   "datum": "2026-10-03",
-   "tid": "",
-   "arena": "Ekhallen",
-   "hemma": "Värmdö HC",
-   "borta": "Team Söderort(FOC/THH/HA)",
-   "resultat": ""
+   "resultat": "13 - 2"
   },
   "15885010|Sudrets HC/Visby Roma HK Ungdom|Huddinge IK": {
    "datum": "2026-10-03",
@@ -115,15 +91,23 @@
   },
   "15885015|Team Söderort(FOC/THH/HA)|Södertälje SK": {
    "datum": "2026-10-07",
-   "tid": "",
+   "tid": "19:00",
    "arena": "Hanvedens ishall",
    "hemma": "Team Söderort(FOC/THH/HA)",
    "borta": "Södertälje SK",
    "resultat": ""
   },
+  "15885006|Team Söderort(FOC/THH/HA)|Boo HC 2": {
+   "datum": "2026-10-08",
+   "tid": "19:00",
+   "arena": "Hanvedens ishall",
+   "hemma": "Team Söderort(FOC/THH/HA)",
+   "borta": "Boo HC 2",
+   "resultat": ""
+  },
   "15885017|Värmdö HC|Södertälje SK": {
-   "datum": "2026-10-10",
-   "tid": "",
+   "datum": "2026-10-08",
+   "tid": "19:30",
    "arena": "Ekhallen",
    "hemma": "Värmdö HC",
    "borta": "Södertälje SK",
@@ -161,12 +145,28 @@
    "borta": "Team Söderort(FOC/THH/HA)",
    "resultat": ""
   },
+  "15885012|Värmdö HC|Team Söderort(FOC/THH/HA)": {
+   "datum": "2026-10-14",
+   "tid": "19:15",
+   "arena": "Ekhallen",
+   "hemma": "Värmdö HC",
+   "borta": "Team Söderort(FOC/THH/HA)",
+   "resultat": ""
+  },
   "15885021|Boo HC 2|Team Söderort(FOC/THH/HA)": {
    "datum": "2026-10-17",
    "tid": "10:45",
    "arena": "Björknäs Ishall",
    "hemma": "Boo HC 2",
    "borta": "Team Söderort(FOC/THH/HA)",
+   "resultat": ""
+  },
+  "15885007|Sudrets HC/Visby Roma HK Ungdom|Södertälje SK": {
+   "datum": "2026-10-17",
+   "tid": "11:00",
+   "arena": "Hemse Ishall",
+   "hemma": "Sudrets HC/Visby Roma HK Ungdom",
+   "borta": "Södertälje SK",
    "resultat": ""
   },
   "15885020|Sudrets HC/Visby Roma HK Ungdom|Värmdö HC": {
@@ -179,7 +179,7 @@
   },
   "15885024|Team Söderort(FOC/THH/HA)|Huddinge IK": {
    "datum": "2026-10-21",
-   "tid": "",
+   "tid": "19:00",
    "arena": "Hanvedens ishall",
    "hemma": "Team Söderort(FOC/THH/HA)",
    "borta": "Huddinge IK",
@@ -193,11 +193,11 @@
    "borta": "Boo HC 2",
    "resultat": ""
   },
-  "15885027|Team Söderort(FOC/THH/HA)|Värmdö HC": {
-   "datum": "2026-11-07",
-   "tid": "",
-   "arena": "Hanvedens ishall",
-   "hemma": "Team Söderort(FOC/THH/HA)",
+  "15885008|Boo HC 2|Värmdö HC": {
+   "datum": "2026-11-06",
+   "tid": "18:30",
+   "arena": "Björknäs Ishall",
+   "hemma": "Boo HC 2",
    "borta": "Värmdö HC",
    "resultat": ""
   },
@@ -217,6 +217,14 @@
    "borta": "Sudrets HC/Visby Roma HK Ungdom",
    "resultat": ""
   },
+  "15885027|Team Söderort(FOC/THH/HA)|Värmdö HC": {
+   "datum": "2026-11-07",
+   "tid": "16:30",
+   "arena": "Hanvedens ishall",
+   "hemma": "Team Söderort(FOC/THH/HA)",
+   "borta": "Värmdö HC",
+   "resultat": ""
+  },
   "15885026|Boo HC 2|Södertälje SK": {
    "datum": "2026-11-08",
    "tid": "16:15",
@@ -225,16 +233,8 @@
    "borta": "Södertälje SK",
    "resultat": ""
   },
-  "15885008|Boo HC 2|Värmdö HC": {
-   "datum": "2026-11-11",
-   "tid": "",
-   "arena": "Björknäs Ishall",
-   "hemma": "Boo HC 2",
-   "borta": "Värmdö HC",
-   "resultat": ""
-  },
   "15885019|Södertälje SK|Huddinge IK": {
-   "datum": "2026-11-11",
+   "datum": "2026-11-12",
    "tid": "20:00",
    "arena": "Månsbrorinken",
    "hemma": "Södertälje SK",
