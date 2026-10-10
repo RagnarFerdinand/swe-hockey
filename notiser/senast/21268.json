@@ -1,0 +1,485 @@
+{
+ "grupp": "21268",
+ "matcher": {
+  "85701003|IK Göta|Hässelby Kälvesta HC": {
+   "datum": "2026-10-10",
+   "tid": "13:30",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": "2 - 7"
+  },
+  "85701002|Hedesunda IF/Brynäs IF 2|Väsby IK HK": {
+   "datum": "2026-10-10",
+   "tid": "14:30",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701001|Almtuna IS|Åker/Strängnäs HC": {
+   "datum": "2026-10-11",
+   "tid": "16:30",
+   "arena": "Gränbyhallen (B)",
+   "hemma": "Almtuna IS",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701005|Väsby IK HK|Almtuna IS": {
+   "datum": "2026-10-14",
+   "tid": "19:30",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701006|Åker/Strängnäs HC|IK Göta": {
+   "datum": "2026-10-17",
+   "tid": "14:10",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701004|Hässelby Kälvesta HC|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2026-10-17",
+   "tid": "16:00",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701008|IK Göta|Väsby IK HK": {
+   "datum": "2026-10-19",
+   "tid": "20:00",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701009|Hässelby Kälvesta HC|Åker/Strängnäs HC": {
+   "datum": "2026-10-20",
+   "tid": "19:00",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701007|Almtuna IS|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2026-10-21",
+   "tid": "19:15",
+   "arena": "Gränby Ishallar A-hall",
+   "hemma": "Almtuna IS",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701010|Almtuna IS|Hässelby Kälvesta HC": {
+   "datum": "2026-11-04",
+   "tid": "19:15",
+   "arena": "Gränby Ishallar A-hall",
+   "hemma": "Almtuna IS",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  },
+  "85701012|Väsby IK HK|Åker/Strängnäs HC": {
+   "datum": "2026-11-04",
+   "tid": "19:30",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701011|Hedesunda IF/Brynäs IF 2|IK Göta": {
+   "datum": "2026-11-06",
+   "tid": "19:00",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701060|Hedesunda IF/Brynäs IF 2|Åker/Strängnäs HC": {
+   "datum": "2026-11-07",
+   "tid": "14:30",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701013|IK Göta|Almtuna IS": {
+   "datum": "2026-11-07",
+   "tid": "17:30",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701014|Hässelby Kälvesta HC|Väsby IK HK": {
+   "datum": "2026-11-10",
+   "tid": "20:00",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701016|Åker/Strängnäs HC|Almtuna IS": {
+   "datum": "2026-11-14",
+   "tid": "13:55",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701018|Hässelby Kälvesta HC|IK Göta": {
+   "datum": "2026-11-14",
+   "tid": "16:00",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701017|Väsby IK HK|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2026-11-14",
+   "tid": "18:30",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701021|IK Göta|Åker/Strängnäs HC": {
+   "datum": "2026-11-21",
+   "tid": "15:00",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701019|Hedesunda IF/Brynäs IF 2|Hässelby Kälvesta HC": {
+   "datum": "2026-11-21",
+   "tid": "18:00",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  },
+  "85701020|Almtuna IS|Väsby IK HK": {
+   "datum": "2026-11-24",
+   "tid": "19:15",
+   "arena": "Gränby Ishallar A-hall",
+   "hemma": "Almtuna IS",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701024|Åker/Strängnäs HC|Hässelby Kälvesta HC": {
+   "datum": "2026-11-28",
+   "tid": "14:10",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  },
+  "85701022|Hedesunda IF/Brynäs IF 2|Almtuna IS": {
+   "datum": "2026-11-28",
+   "tid": "14:30",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701023|Väsby IK HK|IK Göta": {
+   "datum": "2026-11-29",
+   "tid": "13:30",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701025|Hässelby Kälvesta HC|Almtuna IS": {
+   "datum": "2026-12-04",
+   "tid": "19:30",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701027|Åker/Strängnäs HC|Väsby IK HK": {
+   "datum": "2026-12-05",
+   "tid": "14:10",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701026|IK Göta|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2026-12-05",
+   "tid": "15:00",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701029|Väsby IK HK|Hässelby Kälvesta HC": {
+   "datum": "2026-12-12",
+   "tid": "18:30",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  },
+  "85701030|Hedesunda IF/Brynäs IF 2|Åker/Strängnäs HC": {
+   "datum": "2026-12-13",
+   "tid": "15:30",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701028|Almtuna IS|IK Göta": {
+   "datum": "2026-12-13",
+   "tid": "18:15",
+   "arena": "Gränby Ishallar A-hall",
+   "hemma": "Almtuna IS",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701032|Hedesunda IF/Brynäs IF 2|Väsby IK HK": {
+   "datum": "2026-12-19",
+   "tid": "12:00",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701033|IK Göta|Hässelby Kälvesta HC": {
+   "datum": "2026-12-19",
+   "tid": "15:00",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  },
+  "85701031|Almtuna IS|Åker/Strängnäs HC": {
+   "datum": "2026-12-19",
+   "tid": "16:30",
+   "arena": "Gränby Ishallar A-hall",
+   "hemma": "Almtuna IS",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701035|Väsby IK HK|Almtuna IS": {
+   "datum": "2027-01-09",
+   "tid": "13:15",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701036|Åker/Strängnäs HC|IK Göta": {
+   "datum": "2027-01-09",
+   "tid": "14:10",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701034|Hässelby Kälvesta HC|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2027-01-09",
+   "tid": "16:30",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701037|Almtuna IS|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2027-01-13",
+   "tid": "19:15",
+   "arena": "Gränby Ishallar A-hall",
+   "hemma": "Almtuna IS",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701039|Hässelby Kälvesta HC|Åker/Strängnäs HC": {
+   "datum": "2027-01-13",
+   "tid": "20:00",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701038|IK Göta|Väsby IK HK": {
+   "datum": "2027-01-13",
+   "tid": "",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701042|Väsby IK HK|Åker/Strängnäs HC": {
+   "datum": "2027-01-16",
+   "tid": "18:30",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701041|Hedesunda IF/Brynäs IF 2|IK Göta": {
+   "datum": "2027-01-16",
+   "tid": "",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701040|Almtuna IS|Hässelby Kälvesta HC": {
+   "datum": "2027-01-20",
+   "tid": "19:15",
+   "arena": "Gränby Ishallar A-hall",
+   "hemma": "Almtuna IS",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  },
+  "85701045|Åker/Strängnäs HC|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2027-01-23",
+   "tid": "14:10",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701043|IK Göta|Almtuna IS": {
+   "datum": "2027-01-23",
+   "tid": "15:00",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701044|Hässelby Kälvesta HC|Väsby IK HK": {
+   "datum": "2027-01-26",
+   "tid": "20:00",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701046|Åker/Strängnäs HC|Almtuna IS": {
+   "datum": "2027-01-30",
+   "tid": "14:10",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701048|Hässelby Kälvesta HC|IK Göta": {
+   "datum": "2027-01-30",
+   "tid": "16:00",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701047|Väsby IK HK|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2027-01-30",
+   "tid": "18:30",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701050|Almtuna IS|Väsby IK HK": {
+   "datum": "2027-02-06",
+   "tid": "13:45",
+   "arena": "Gränbyhallen (B)",
+   "hemma": "Almtuna IS",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701051|IK Göta|Åker/Strängnäs HC": {
+   "datum": "2027-02-06",
+   "tid": "15:00",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Åker/Strängnäs HC",
+   "resultat": ""
+  },
+  "85701049|Hedesunda IF/Brynäs IF 2|Hässelby Kälvesta HC": {
+   "datum": "2027-02-06",
+   "tid": "",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  },
+  "85701058|Almtuna IS|IK Göta": {
+   "datum": "2027-02-08",
+   "tid": "19:15",
+   "arena": "Gränby Ishallar A-hall",
+   "hemma": "Almtuna IS",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701054|Åker/Strängnäs HC|Hässelby Kälvesta HC": {
+   "datum": "2027-02-13",
+   "tid": "13:10",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  },
+  "85701053|Väsby IK HK|IK Göta": {
+   "datum": "2027-02-13",
+   "tid": "18:30",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "IK Göta",
+   "resultat": ""
+  },
+  "85701052|Hedesunda IF/Brynäs IF 2|Almtuna IS": {
+   "datum": "2027-02-13",
+   "tid": "",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701057|Åker/Strängnäs HC|Väsby IK HK": {
+   "datum": "2027-02-20",
+   "tid": "14:10",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "Väsby IK HK",
+   "resultat": ""
+  },
+  "85701056|IK Göta|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2027-02-20",
+   "tid": "15:00",
+   "arena": "HCL Tech Arena",
+   "hemma": "IK Göta",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701055|Hässelby Kälvesta HC|Almtuna IS": {
+   "datum": "2027-02-20",
+   "tid": "",
+   "arena": "Reliable Arena",
+   "hemma": "Hässelby Kälvesta HC",
+   "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701015|Åker/Strängnäs HC|Hedesunda IF/Brynäs IF 2": {
+   "datum": "2027-02-27",
+   "tid": "14:10",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "Hedesunda IF/Brynäs IF 2",
+   "resultat": ""
+  },
+  "85701059|Väsby IK HK|Hässelby Kälvesta HC": {
+   "datum": "2027-02-27",
+   "tid": "15:00",
+   "arena": "Vilundaparkens Ishall A",
+   "hemma": "Väsby IK HK",
+   "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  }
+ }
+}
