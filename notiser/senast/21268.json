@@ -169,20 +169,20 @@
    "borta": "Väsby IK HK",
    "resultat": ""
   },
-  "85701024|Åker/Strängnäs HC|Hässelby Kälvesta HC": {
-   "datum": "2026-11-28",
-   "tid": "14:10",
-   "arena": "Åkers Ishall",
-   "hemma": "Åker/Strängnäs HC",
-   "borta": "Hässelby Kälvesta HC",
-   "resultat": ""
-  },
   "85701022|Hedesunda IF/Brynäs IF 2|Almtuna IS": {
    "datum": "2026-11-28",
    "tid": "14:30",
    "arena": "Hedesunda Ishall",
    "hemma": "Hedesunda IF/Brynäs IF 2",
    "borta": "Almtuna IS",
+   "resultat": ""
+  },
+  "85701024|Åker/Strängnäs HC|Hässelby Kälvesta HC": {
+   "datum": "2026-11-29",
+   "tid": "09:45",
+   "arena": "Åkers Ishall",
+   "hemma": "Åker/Strängnäs HC",
+   "borta": "Hässelby Kälvesta HC",
    "resultat": ""
   },
   "85701023|Väsby IK HK|IK Göta": {
@@ -210,7 +210,7 @@
    "resultat": ""
   },
   "85701026|IK Göta|Hedesunda IF/Brynäs IF 2": {
-   "datum": "2026-12-05",
+   "datum": "2026-12-06",
    "tid": "15:00",
    "arena": "HCL Tech Arena",
    "hemma": "IK Göta",
