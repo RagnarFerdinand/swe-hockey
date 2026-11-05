@@ -97,14 +97,6 @@
    "borta": "IK Göta",
    "resultat": ""
   },
-  "85701060|Hedesunda IF/Brynäs IF 2|Åker/Strängnäs HC": {
-   "datum": "2026-11-07",
-   "tid": "14:30",
-   "arena": "Hedesunda Ishall",
-   "hemma": "Hedesunda IF/Brynäs IF 2",
-   "borta": "Åker/Strängnäs HC",
-   "resultat": ""
-  },
   "85701013|IK Göta|Almtuna IS": {
    "datum": "2026-11-07",
    "tid": "17:30",
@@ -479,6 +471,14 @@
    "arena": "Vilundaparkens Ishall A",
    "hemma": "Väsby IK HK",
    "borta": "Hässelby Kälvesta HC",
+   "resultat": ""
+  },
+  "85701060|Hedesunda IF/Brynäs IF 2|Åker/Strängnäs HC": {
+   "datum": "2027-05-15",
+   "tid": "",
+   "arena": "Hedesunda Ishall",
+   "hemma": "Hedesunda IF/Brynäs IF 2",
+   "borta": "Åker/Strängnäs HC",
    "resultat": ""
   }
  }
